@@ -927,6 +927,33 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
 .connect b{display:block;font-size:.86rem;font-weight:600}
 .connect small{display:block;font-size:.78rem;color:var(--mist);line-height:1.5;margin-top:.15rem}
 
+.trip .ph.iconic{
+  display:grid;place-items:center;cursor:default;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 45%,rgba(26,74,158,.5),transparent 70%),
+    linear-gradient(150deg,#0d2450,#071634 72%);
+}
+.trip .ph.iconic::after{display:none}
+.trip .ph.iconic svg{
+  width:clamp(44px,7vw,58px);height:clamp(44px,7vw,58px);
+  stroke:var(--gold-pale);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .4s var(--ease),filter .4s;
+}
+.trip .card:hover .ph.iconic svg{transform:translateY(-4px) scale(1.05);filter:drop-shadow(0 0 14px rgba(246,184,60,.55))}
+.trip-group{margin-top:clamp(2.2rem,4.6vw,3.2rem)}
+.trip-group > .eyebrow{margin-bottom:.2rem}
+.trip-group > .glab{
+  display:block;font-size:.88rem;color:var(--faint);margin:0 0 .2rem;
+}
+.season{
+  display:flex;gap:1.1rem;align-items:flex-start;
+  margin-top:clamp(1.6rem,3.4vw,2.2rem);padding:1.2rem 1.4rem;
+  background:var(--ink-2);border:1px solid var(--hair-2);border-left:3px solid var(--gold);
+  border-radius:12px;
+}
+.season svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;flex:0 0 auto;margin-top:.15rem}
+.season p{margin:0;font-size:.9rem;line-height:1.7;color:var(--mist)}
+.season b{color:var(--cream);font-weight:600}
 .trip{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1.15rem;margin-top:1.7rem}
 .trip .card{display:flex;flex-direction:column;gap:.6rem;padding:0;overflow:hidden;transition:transform .4s var(--ease),border-color .4s}
 .trip .card:hover{transform:translateY(-6px);border-color:var(--hair)}
@@ -1319,11 +1346,11 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
         </div>
         <div class="tier">
           <b>50%</b><small>Refunded</small>
-          <span>Request received between <strong>16 Sep and 31 Oct 2026</strong> (Regular deadline)</span>
+          <span>Request received between <strong>16 Sep and 30 Nov 2026</strong></span>
         </div>
         <div class="tier none">
           <b>0%</b><small>No refund</small>
-          <span>Request received <strong>after 31 Oct 2026</strong></span>
+          <span>Request received <strong>after 30 Nov 2026</strong></span>
         </div>
       </div>
 
@@ -1481,16 +1508,46 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
 
     <p class="eyebrow rise" style="margin-top:3.2rem;text-align:center">Conference se seekhenge vigyan ki baatein, aur pahadon se seekhenge jeevan ki raahein</p>
 
-    <div class="trip rise">
-      <div class="card"><button class="ph" data-lb="Robber's Cave" data-full="assets/page-cave.webp"><img src="assets/v-cave.webp" alt="The river gorge at Guchhupani" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Robber's Cave</span><span class="km">8–9 km · Guchhupani</span><p>A natural river cave where water flows through narrow rock walls. Visitors walk barefoot through the cool stream.</p><ul><li>Best time: morning to afternoon</li><li>Popular for photography and picnics</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Sahastradhara" data-full="assets/page-sahastradhara.webp"><img src="assets/v-sahastradhara.webp" alt="The limestone falls" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Sahastradhara</span><span class="km">15 km</span><p>Famous for its thousand-fold spring waterfalls and limestone formations. The sulphur-rich water is believed to have therapeutic properties.</p><ul><li>Ropeway, swimming pools and scenic views</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Mussoorie" data-full="assets/page-mussoorie.webp"><img src="assets/v-mussoorie.webp" alt="The ridge at first light" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Mussoorie</span><span class="km">35 km · Queen of Hills</span><p>The most famous hill station near Dehradun, and the classic half-day escape.</p><ul><li>Mall Road</li><li>Kempty Falls</li><li>Gun Hill viewpoint</li><li>Sunset views and cafés</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Dhanaulti" data-full="assets/page-dhanaulti.webp"><img src="assets/v-dhanaulti.webp" alt="Snow in the deodar forest" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Dhanaulti</span><span class="km">60 km</span><p>A calm hill station surrounded by deodar forests, far quieter than Mussoorie. Conference week falls in the snow window.</p><ul><li>Eco Parks</li><li>Surkanda Devi Temple</li><li>Snow in winter</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Chakrata" data-full="assets/page-chakrata.webp"><img src="assets/v-chakrata2.webp" alt="The meadows above Chakrata" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Chakrata</span><span class="km">90 km</span><p>A quiet hill station, less crowded than Mussoorie. Perfect for nature lovers and trekking.</p><ul><li>Tiger Falls</li><li>Panoramic Himalayan views</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Rajaji Tiger Reserve" data-full="assets/page-rajaji.webp"><img src="assets/v-tiger.webp" alt="Bengal tiger" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Rajaji Tiger Reserve</span><span class="km">Chilla Gate ~70 km · Motichur ~60 km</span><p>Established 2015 across 820.42 sq km — a repository of Shivalik biodiversity, and one of the largest elephant populations in the region.</p><ul><li>Dehradun → Chilla Gate: 1.5–2 hrs</li><li>Over 300 bird species in the sal forest</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Haridwar" data-full="assets/page-haridwar.webp"><img src="assets/v-haridwar.webp" alt="The ghats along the Ganga" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Haridwar</span><span class="km">45 km</span><p>One of the holiest cities in India and a major pilgrimage destination. Lamps go on the water at dusk — arrive an hour early for a place on the steps.</p><ul><li>Ganga Aarti at Har Ki Pauri</li></ul></div></div>
-      <div class="card"><button class="ph" data-lb="Hidden gems" data-full="assets/page-hidden.webp"><img src="assets/v-maldevta.webp" alt="Riverside at Maldevta" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Hidden gems</span><span class="km">Less crowded spots</span><p>Nature and adventure close to the city, without the tourist crush.</p><ul><li>Maldevta — riverside picnic spot</li><li>Lacchiwala Nature Park — forest pools</li><li>Nag Tibba Trek — the Serpent's Peak</li><li>Tehri, Chamba, Kanatal, Pauri</li></ul></div></div>
+    <div class="season rise">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M12 2 9.4 4.6M12 2l2.6 2.6M12 22l-2.6-2.6M12 22l2.6-2.6"/><path d="m3.3 7 17.4 10M3.3 7l3.5.4M3.3 7l1-3.4M20.7 17l-3.5-.4M20.7 17l-1 3.4"/><path d="M20.7 7 3.3 17M20.7 7l-3.5.4M20.7 7l-1-3.4M3.3 17l3.5-.4M3.3 17l1 3.4"/></svg>
+      <p><b>Conference week is winter.</b> Expect roughly 6–22&nbsp;°C in the valley, near-freezing nights at Dhanaulti and Chakrata, and a real chance of snow above 2000&nbsp;m. Pack layers — and if the hills are why you're coming, February is the right week for it.<br><b>Distances below are measured from Dehradun city.</b> The venue sits at Jolly Grant, about 25&nbsp;km east on the Rishikesh road — so Rishikesh and Haridwar are closer than they look, and Mussoorie and Chakrata a little further.</p>
     </div>
+
+<div class="trip-group rise">
+      <p class="eyebrow">Close by</p>
+      <span class="glab">An evening, or a couple of hours between sessions</span>
+      <div class="trip">
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M4.5 21V10.5M8.2 21V10.5M12 21V10.5M15.8 21V10.5M19.5 21V10.5"/><path d="M2.5 10.5h19L12 4.2z"/><path d="M3.5 18h17"/></svg></div><div class="body"><span class="tag">Forest Research Institute</span><span class="km">7 km · Dehradun</span><p>A 1906 Greco-Roman colonial building set in a 450-hectare estate, with six museums of forestry and botany inside. The most photographed building in the city.</p><ul><li>Six museums under one roof</li><li>Vast lawns and sal forest</li><li>Allow about two hours</li></ul></div></div>
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21h16"/><path d="M6.2 21v-3.4a5.8 5.8 0 0 1 11.6 0V21"/><path d="M8.8 15.4a3.2 3.2 0 0 1 6.4 0"/><path d="M12 12.2V8.4M10.1 8.4h3.8M12 8.4V5.6"/><circle cx="12" cy="4.2" r="1.3"/></svg></div><div class="body"><span class="tag">Mindrolling Monastery</span><span class="km">10 km · Clement Town</span><p>One of the largest Tibetan Buddhist stupas in the world, in a quiet monastery complex on the south-west edge of the city.</p><ul><li>The Great Stupa</li><li>Buddha statue and gardens</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Robber's Cave" data-full="assets/page-cave.webp"><img src="assets/v-cave.webp" alt="The river gorge at Guchhupani" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Robber's Cave</span><span class="km">8–9 km · Guchhupani</span><p>A natural river cave where water flows through narrow rock walls. Visitors walk barefoot through the cool stream.</p><ul><li>Best time: morning to afternoon</li><li>Popular for photography and picnics</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Sahastradhara" data-full="assets/page-sahastradhara.webp"><img src="assets/v-sahastradhara.webp" alt="The limestone falls" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Sahastradhara</span><span class="km">15 km</span><p>Famous for its thousand-fold spring waterfalls and limestone formations. The sulphur-rich water is believed to have therapeutic properties.</p><ul><li>Ropeway, swimming pools and scenic views</li></ul></div></div>
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M5 21v-6.6a7 7 0 0 1 14 0V21"/><path d="M9.8 21v-4.4a2.2 2.2 0 0 1 4.4 0V21"/><path d="M12 6.2V3.4M8.6 8.2 7.2 6M15.4 8.2 16.8 6"/></svg></div><div class="body"><span class="tag">Tapkeshwar Temple</span><span class="km">6 km</span><p>A cave temple on the Tons river where water drips continuously onto the Shivling. Busiest on Mondays and at Shivratri.</p><ul><li>Natural cave shrine</li><li>Stream running through the complex</li></ul></div></div>
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.6 9h18.8l-1.6-4.4A1.2 1.2 0 0 0 18.7 4H5.3a1.2 1.2 0 0 0-1.1.6L2.6 9z"/><path d="M4.2 9v10.8a1.2 1.2 0 0 0 1.2 1.2h13.2a1.2 1.2 0 0 0 1.2-1.2V9"/><path d="M9.2 21v-6.2h5.6V21"/></svg></div><div class="body"><span class="tag">Paltan Bazaar &amp; Clock Tower</span><span class="km">City centre</span><p>Dehradun's oldest market street, running from the Clock Tower. The place to pick up rusks, woollens and Tibetan handicrafts.</p><ul><li>Bakeries and street food</li><li>Open into the evening</li></ul></div></div>
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22v-4.6"/><path d="M12 17.4a5.4 5.4 0 0 0 5.4-5.4 5.4 5.4 0 0 0-1.1-3.2 4.4 4.4 0 0 0-8.6 0A5.4 5.4 0 0 0 6.6 12 5.4 5.4 0 0 0 12 17.4z"/><path d="M4 22h16"/></svg></div><div class="body"><span class="tag">Malsi Deer Park</span><span class="km">10 km · Mussoorie road</span><p>A small zoological park at the foot of the hills, with deer, peacocks and a children's area. The easiest option for delegates travelling with family.</p><ul><li>Good for accompanying persons</li><li>Under an hour is enough</li></ul></div></div>
+      </div>
+    </div>
+
+    <div class="trip-group rise">
+      <p class="eyebrow">Half a day</p>
+      <span class="glab">Comfortable either side of a session day</span>
+      <div class="trip">
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 7.5V19M21.5 7.5V19"/><path d="M2.5 7.5c5.2 6.4 15.8 6.4 19 0"/><path d="M2 19h20"/><path d="M6.6 12.6V19M10.3 14.9V19M13.7 14.9V19M17.4 12.6V19"/></svg></div><div class="body"><span class="tag">Rishikesh</span><span class="km">45 km from Dehradun · closer to the venue</span><p>Yoga capital of the world, on the Ganga where it leaves the hills. Jolly Grant sits between the city and Rishikesh, so this is nearer than the city-centre distance suggests.</p><ul><li>Ganga Aarti at Parmarth Niketan</li><li>Ram Jhula and Lakshman Jhula</li><li>The Beatles Ashram</li><li>Rafting at Shivpuri — in season in February</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Haridwar" data-full="assets/page-haridwar.webp"><img src="assets/v-haridwar.webp" alt="The ghats along the Ganga" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Haridwar</span><span class="km">45 km</span><p>One of the holiest cities in India and a major pilgrimage destination. Lamps go on the water at dusk — arrive an hour early for a place on the steps.</p><ul><li>Ganga Aarti at Har Ki Pauri</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Mussoorie" data-full="assets/page-mussoorie.webp"><img src="assets/v-mussoorie.webp" alt="The ridge at first light" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Mussoorie</span><span class="km">35 km · Queen of Hills</span><p>The most famous hill station near Dehradun, and the classic half-day escape.</p><ul><li>Mall Road</li><li>Kempty Falls</li><li>Gun Hill viewpoint</li><li>Sunset views and cafés</li></ul></div></div>
+      </div>
+    </div>
+
+    <div class="trip-group rise">
+      <p class="eyebrow">A full day</p>
+      <span class="glab">Or reason to extend your stay</span>
+      <div class="trip">
+        <div class="card"><button class="ph" data-lb="Dhanaulti" data-full="assets/page-dhanaulti.webp"><img src="assets/v-dhanaulti.webp" alt="Snow in the deodar forest" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Dhanaulti</span><span class="km">60 km</span><p>A calm hill station surrounded by deodar forests, far quieter than Mussoorie. Conference week falls in the snow window.</p><ul><li>Eco Parks</li><li>Surkanda Devi Temple</li><li>Snow in winter</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Chakrata" data-full="assets/page-chakrata.webp"><img src="assets/v-chakrata2.webp" alt="The meadows above Chakrata" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Chakrata</span><span class="km">90 km</span><p>A quiet hill station, less crowded than Mussoorie. Perfect for nature lovers and trekking.</p><ul><li>Tiger Falls</li><li>Panoramic Himalayan views</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Rajaji Tiger Reserve" data-full="assets/page-rajaji.webp"><img src="assets/v-tiger.webp" alt="Bengal tiger" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Rajaji Tiger Reserve</span><span class="km">Chilla Gate ~70 km · Motichur ~60 km</span><p>Established 2015 across 820.42 sq km — a repository of Shivalik biodiversity, and one of the largest elephant populations in the region.</p><ul><li>Dehradun → Chilla Gate: 1.5–2 hrs</li><li>Over 300 bird species in the sal forest</li></ul></div></div>
+        <div class="card"><button class="ph" data-lb="Hidden gems" data-full="assets/page-hidden.webp"><img src="assets/v-maldevta.webp" alt="Riverside at Maldevta" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Hidden gems</span><span class="km">Less crowded spots</span><p>Nature and adventure close to the city, without the tourist crush.</p><ul><li>Maldevta — riverside picnic spot</li><li>Lacchiwala Nature Park — forest pools</li><li>Nag Tibba Trek — the Serpent's Peak</li><li>Tehri, Chamba, Kanatal, Pauri</li></ul></div></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
