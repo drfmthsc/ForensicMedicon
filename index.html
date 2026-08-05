@@ -8,6 +8,18 @@
 <meta property="og:title" content="FORENSIC MEDICON 2027 — 48th Annual Conference of IAFM">
 <meta property="og:description" content="Translational Forensics: Uniting Medicine, Nursing, Forensics, Judiciary, Police and Society. 2–6 February 2027, Dehradun.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta property="og:image" content="https://drfmthsc.github.io/ForensicMedicon/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://drfmthsc.github.io/ForensicMedicon/">
+<meta property="og:site_name" content="FORENSIC MEDICON 2027">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drfmthsc.github.io/ForensicMedicon/assets/og-image.jpg">
+<!-- If the site moves to another address, update the two og:image / twitter:image
+     URLs and og:url above — WhatsApp and other apps need absolute links. -->
+
 <meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,6 +188,35 @@ ul.bul li::marker{color:var(--gold)}
 .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s var(--ease)}
 .nav-links a:hover,.nav-links a.on{color:var(--gold)}
 .nav-links a.on::after,.nav-links a:hover::after{right:0}
+.has-sub{position:relative}
+.has-sub > a{padding-right:1rem}
+.has-sub > a::before{
+  content:"";position:absolute;right:0;top:50%;margin-top:-2px;
+  border:4px solid transparent;border-top-color:currentColor;
+}
+.has-sub > a::after{right:1rem}
+.sub{
+  list-style:none;margin:0;padding:.4rem;position:absolute;top:100%;left:50%;
+  transform:translateX(-50%) translateY(6px);min-width:190px;
+  background:rgba(5,5,6,.97);border:1px solid var(--hair);border-radius:12px;
+  box-shadow:0 22px 44px -26px #000;
+  opacity:0;visibility:hidden;transition:opacity .25s,transform .25s var(--ease),visibility .25s;
+}
+.has-sub:hover .sub,.has-sub:focus-within .sub,.has-sub.open .sub{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.sub li{border:0}
+.sub a{display:block;padding:.6rem .9rem;border-radius:8px;font-size:.74rem}
+.sub a:hover{background:rgba(246,184,60,.1)}
+.sub a::after{display:none}
+@media(max-width:780px){
+  .has-sub > a::before{right:1.1rem}
+  .sub{
+    position:static;transform:none;opacity:1;visibility:visible;min-width:0;
+    background:transparent;border:0;box-shadow:none;padding:0 0 .4rem 1rem;
+  }
+  .sub a{padding:.6rem 1.5rem;font-size:.8rem;color:var(--faint)}
+}
 .nav-cta{background:var(--band);color:#080808;font-weight:600;font-size:.76rem;padding:.55rem 1.15rem;border-radius:999px;text-decoration:none;white-space:nowrap;transition:transform .25s,box-shadow .25s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px var(--gold-deep)}
 .burger{display:none;background:none;border:0;color:var(--gold);padding:.4rem;margin-left:auto;cursor:pointer}
@@ -544,6 +585,35 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
 .need .n{font-family:var(--data);font-size:.72rem;color:var(--gold);padding-top:.3rem;flex:0 0 auto}
 .need p{margin:0;font-size:.9rem;color:var(--mist)}
 
+/* ── Abstracts & awards ───────────────────────────────────── */
+.abs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.05rem;margin-top:1.8rem}
+.abs-card{
+  padding:1.5rem 1.4rem 1.6rem;border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 72%);
+  border:1px solid var(--hair-2);
+  transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;
+}
+.abs-card:hover{transform:translateY(-5px);border-color:rgba(246,184,60,.45);box-shadow:0 24px 48px -30px #000}
+.abs-card h4{
+  margin:0 0 .8rem;padding-bottom:.75rem;border-bottom:1px solid var(--hair-2);
+  font-family:var(--data);font-weight:700;font-size:.67rem;letter-spacing:.18em;
+  margin-right:-.18em;text-transform:uppercase;color:var(--gold);
+}
+.abs-card p{margin:0 0 .6rem;font-size:.9rem;line-height:1.7;color:var(--mist)}
+.abs-card ul{margin:0;padding-left:1.05rem;font-size:.9rem;line-height:1.75;color:var(--mist)}
+.abs-card li::marker{color:var(--gold-deep)}
+.abs-card strong{color:var(--cream)}
+.awards{margin-top:clamp(2rem,4vw,2.8rem)}
+.award-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:.85rem;margin-top:1.4rem}
+.award{
+  display:flex;gap:.85rem;align-items:flex-start;padding:1.15rem 1.25rem;
+  background:var(--ink-2);border:1px solid var(--hair-2);border-radius:14px;
+  border-left:3px solid var(--gold);transition:transform .35s var(--ease),border-color .35s;
+}
+.award:hover{transform:translateY(-4px);border-color:rgba(246,184,60,.4)}
+.award svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem}
+.award b{display:block;font-size:.92rem;font-weight:600;line-height:1.35;margin-bottom:.25rem}
+.award small{font-size:.82rem;color:var(--mist);line-height:1.6}
 .days{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem;margin-top:1.8rem}
 .day{
   position:relative;padding:1.5rem 1.25rem 1.6rem;border-radius:16px;
@@ -1194,6 +1264,27 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
 .where{font-size:.78rem;color:var(--gold);font-family:var(--data);letter-spacing:.03em}
 
 /* ═══════════ CONTACT / FOOTER ═══════════ */
+.venue-card{
+  display:grid;grid-template-columns:auto 1fr;gap:1.15rem;align-items:start;
+  max-width:640px;margin:clamp(1.6rem,3.4vw,2.2rem) auto 0;
+  padding:1.35rem 1.5rem;text-align:left;
+  background:var(--ink-2);border:1px solid var(--hair-2);border-radius:14px;
+}
+.venue-card svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:.2rem}
+.venue-card h4{
+  margin:0 0 .5rem;font-family:var(--data);font-weight:700;font-size:.66rem;
+  letter-spacing:.18em;margin-right:-.18em;text-transform:uppercase;color:var(--gold);
+}
+.venue-card p{margin:0 0 .7rem;font-size:.9rem;line-height:1.65;color:var(--mist)}
+.venue-card a.map{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--data);font-weight:600;font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;
+  border:1px solid var(--hair);border-radius:999px;padding:.45rem .95rem;
+  transition:background .3s,color .3s,border-color .3s;
+}
+.venue-card a.map:hover{background:var(--band);color:#0a0a0c;border-color:transparent}
+@media(max-width:640px){ .venue-card{grid-template-columns:1fr} }
 .helpdesk{text-align:center;border:1px solid var(--gold);border-radius:16px;padding:clamp(2.2rem,5vw,3.4rem) clamp(1.25rem,4vw,2.5rem);background:radial-gradient(ellipse at 50% 0%,rgba(246,184,60,.12),transparent 70%),var(--ink-2);position:relative;overflow:hidden}
 .helpdesk::before{content:"";position:absolute;inset:-50% -20% auto;height:200%;background:conic-gradient(from 0deg,transparent,rgba(246,184,60,.07),transparent 40%);animation:spin 16s linear infinite}
 @keyframes spin{to{transform:rotate(1turn)}}
@@ -1292,7 +1383,36 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
   .msg::after{font-size:6rem;right:.9rem;top:-.9rem;color:rgba(246,184,60,.05)}
   .msg summary{padding:1rem 1.15rem;gap:.9rem}
   .msg .body{padding:1.1rem 1.15rem 1.3rem}
-  .nav-cta{display:none}
+  .has-sub{position:relative}
+.has-sub > a{padding-right:1rem}
+.has-sub > a::before{
+  content:"";position:absolute;right:0;top:50%;margin-top:-2px;
+  border:4px solid transparent;border-top-color:currentColor;
+}
+.has-sub > a::after{right:1rem}
+.sub{
+  list-style:none;margin:0;padding:.4rem;position:absolute;top:100%;left:50%;
+  transform:translateX(-50%) translateY(6px);min-width:190px;
+  background:rgba(5,5,6,.97);border:1px solid var(--hair);border-radius:12px;
+  box-shadow:0 22px 44px -26px #000;
+  opacity:0;visibility:hidden;transition:opacity .25s,transform .25s var(--ease),visibility .25s;
+}
+.has-sub:hover .sub,.has-sub:focus-within .sub,.has-sub.open .sub{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.sub li{border:0}
+.sub a{display:block;padding:.6rem .9rem;border-radius:8px;font-size:.74rem}
+.sub a:hover{background:rgba(246,184,60,.1)}
+.sub a::after{display:none}
+@media(max-width:780px){
+  .has-sub > a::before{right:1.1rem}
+  .sub{
+    position:static;transform:none;opacity:1;visibility:visible;min-width:0;
+    background:transparent;border:0;box-shadow:none;padding:0 0 .4rem 1rem;
+  }
+  .sub a{padding:.6rem 1.5rem;font-size:.8rem;color:var(--faint)}
+}
+.nav-cta{display:none}
   .chain-track{grid-template-columns:repeat(3,1fr);row-gap:1.1rem}
   .pillar:nth-child(3n+1) .node::before{background:linear-gradient(90deg,transparent,var(--gold-deep))}
   .pillar:nth-child(3n) .node::after{background:linear-gradient(90deg,var(--gold),transparent)}
@@ -1446,6 +1566,15 @@ thead th.now small{color:rgba(255,255,255,.8)}
 }
 .sched-note .watch{color:#26200F}
 
+
+.abs-card,.award,.venue-card{box-shadow:0 10px 26px -22px rgba(27,23,18,.5)}
+.abs-card:hover,.award:hover{box-shadow:0 22px 44px -28px rgba(27,23,18,.55)}
+.sub{background:rgba(255,255,255,.99);box-shadow:0 22px 44px -26px rgba(27,23,18,.5)}
+.sub a{color:rgba(27,23,18,.7)}
+.sub a:hover{background:rgba(168,115,11,.1)}
+@media(max-width:780px){ .sub{background:transparent} }
+.venue-card a.map:hover{color:#26200F}
+
 /* the seats chips stay navy — they read as the justice chain */
 .seats span{background:#12326d;color:#FFE9A8;border-color:rgba(168,115,11,.5)}
 .seats span:hover{background:#0d2450}
@@ -1467,11 +1596,16 @@ thead th.now small{color:rgba(255,255,255,.8)}
       <li><a href="#theme">Theme</a></li>
       <li><a href="#labs">Skill Labs</a></li>
       <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#abstracts">Abstracts</a></li>
       <li><a href="#register">Register</a></li>
       <li><a href="#committee">Committee</a></li>
-      <li><a href="#stay">Stay</a></li>
-      <li><a href="#travel">Travel</a></li>
-      <li><a href="#food">Food</a></li>
+      <li class="has-sub"><a href="#stay">Visiting</a>
+        <ul class="sub">
+          <li><a href="#stay">Accommodation</a></li>
+          <li><a href="#travel">Travel planner</a></li>
+          <li><a href="#food">Food trail</a></li>
+        </ul>
+      </li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" data-register data-label="Register now" href="#register">Registration fees</a>
@@ -1697,6 +1831,60 @@ thead th.now small{color:rgba(255,255,255,.8)}
   </div>
 </section>
 
+<!-- ══════ ABSTRACTS ══════ -->
+<section id="abstracts" style="background:var(--ink-2)">
+  <div class="shell">
+    <div class="band-wrap rise"><div class="band"><h2>Abstracts &amp; Awards</h2></div></div>
+    <p class="lede rise" style="text-align:center;max-width:790px;margin-inline:auto">The scientific programme is built from free papers and posters submitted by delegates. Undergraduate students, postgraduate trainees, nursing professionals and faculty are all encouraged to present.</p>
+
+    <div class="abs-grid rise">
+      <div class="abs-card">
+        <h4>What you can submit</h4>
+        <ul>
+          <li><strong>Oral presentation</strong> — free paper</li>
+          <li><strong>Poster presentation</strong></li>
+        </ul>
+        <p style="margin-top:.8rem">Original research, case reports and case series in forensic medicine, toxicology, forensic nursing and allied medico-legal fields.</p>
+      </div>
+      <div class="abs-card">
+        <h4>Who may present</h4>
+        <ul>
+          <li>Faculty and practising professionals</li>
+          <li>Postgraduate trainees</li>
+          <li>Nursing professionals</li>
+          <li>Undergraduate students and interns</li>
+        </ul>
+        <p style="margin-top:.8rem">The presenting author must be a registered delegate.</p>
+      </div>
+      <div class="abs-card">
+        <h4>How to submit</h4>
+        <p>The submission portal, abstract format, word limit and deadline <strong>will be announced soon</strong>.</p>
+        <p>Until then, queries may be sent to the organising office at <a href="mailto:2027forensicmedicon@gmail.com" style="color:var(--gold)">2027forensicmedicon@gmail.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="awards rise">
+      <p class="eyebrow">Awards conferred at the national conference</p>
+      <p class="lede" style="max-width:70ch;margin-bottom:0">These are conferred by the Indian Academy of Forensic Medicine at its annual conference. Eligibility, nomination and application are handled by the Academy — the categories offered at FORENSIC MEDICON 2027 will be confirmed nearer the date.</p>
+      <div class="award-list">
+        <div class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="14.6" r="5.6"/><path d="m8.6 9.6-3.4-6.4M15.4 9.6l3.4-6.4M9.6 3.2h4.8"/><path d="m12 12.2.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z"/></svg><div><b>Haque &amp; Bose Lifetime Achievement Award</b><small>The Academy's highest honour, conferred at the annual national conference.</small></div></div>
+        <div class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b>IAFM Fellowships</b><small>Conferred on senior members, ordinarily one from each zone.</small></div></div>
+        <div class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v5.4a5 5 0 0 1-10 0z"/><path d="M7 5.6H4.6a2.4 2.4 0 0 0 2.4 4M17 5.6h2.4a2.4 2.4 0 0 1-2.4 4"/><path d="M12 14.4V18M8.6 20.6h6.8"/></svg><div><b>JMSM IAFM Travel Scholarship</b><small>Late Jagmohan Sharma Memorial scholarship for the best oral presentation by a postgraduate, with the Dr Manmohan Reddy sponsored IAFM cash award.</small></div></div>
+        <div class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2.8H6.6a2.4 2.4 0 0 0-2.4 2.4v13.6a2.4 2.4 0 0 0 2.4 2.4h10.8a2.4 2.4 0 0 0 2.4-2.4V8.6z"/><path d="M14 2.8v5.8h5.8M8.4 13h7.2M8.4 16.6h4.8"/></svg><div><b>IAFM National Poster Competition</b><small>Open to postgraduate trainees and young members presenting posters.</small></div></div>
+      </div>
+    </div>
+
+    <div class="sched-note rise">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4h8.4"/><path d="M16.4 3.6a2.3 2.3 0 0 1 3.3 3.3L7.4 19.2 3 20.4l1.2-4.4z"/></svg>
+      <div>
+        <h4>Call for abstracts</h4>
+        <p><b>Submission dates and full guidelines will be announced soon</b>, alongside the detailed scientific programme.</p>
+        <p><span class="watch">Watch this space &amp; the official IAFM WhatsApp group</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════ REGISTRATION ══════ -->
 <section id="register" style="background:var(--ink-2)">
   <div class="shell">
@@ -1734,7 +1922,9 @@ thead th.now small{color:rgba(255,255,255,.8)}
           <ul class="bul"><li>Entry to all scientific sessions</li><li>Breakfast, lunch and refreshments</li><li>Conference kit</li><li>Conference dinners</li><li>Gala dinner / cultural evening</li><li>Participation certificate</li></ul>
         </div>
         <div class="card"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>Good to know</h3>
-          <ul class="bul"><li><span class="dagger">***</span> The conference kit is not provided for spot registrations, undergraduate students and nursing professionals.</li><li>Registration is free for non-working faculty over 70 years of age.</li><li>Cancellation and refund terms are set out below.</li></ul>
+          <ul class="bul"><li><span class="dagger">***</span> The conference kit is not provided for spot registrations, undergraduate students and nursing professionals.</li><li>Registration is free for non-working faculty over 70 years of age.</li><li>Cancellation and refund terms are set out below.</li>
+<li>CME accreditation is being applied for. Credit hours will be confirmed closer to the conference.</li>
+<li>Overseas delegates who need a letter of invitation for visa purposes should write to the organising office after registering.</li></ul>
         </div>
       </div>
     </div>
@@ -1787,11 +1977,11 @@ thead th.now small{color:rgba(255,255,255,.8)}
         </div>
         <div class="tier">
           <b>50%</b><small>Refunded</small>
-          <span>Request received between <strong>16 Sep and 30 Nov 2026</strong></span>
+          <span>Request received between <strong>16 Sep and 31 Oct 2026</strong> (Regular deadline)</span>
         </div>
         <div class="tier none">
           <b>0%</b><small>No refund</small>
-          <span>Request received <strong>after 30 Nov 2026</strong></span>
+          <span>Request received <strong>after 31 Oct 2026</strong></span>
         </div>
       </div>
 
@@ -1883,7 +2073,7 @@ thead th.now small{color:rgba(255,255,255,.8)}
 
     <p class="eyebrow rise" style="margin-top:2.5rem">Core team</p>
     <div class="leaders rise">
-      <div class="leader"><img src="assets/p-sanjoy.webp" alt="Dr Sanjoy Das" loading="lazy"><b>Dr Sanjoy Das</b><small>Organizing Chairman</small></div>
+      <div class="leader"><img src="assets/p-sanjoy.webp" alt="Dr Sanjoy Das" loading="lazy"><b>Dr Sanjoy Das</b><small>Organizing Chairperson</small></div>
       <div class="leader"><img src="assets/p-pragya.webp" alt="Dr Pragya Tripathi" loading="lazy"><b>Dr Pragya Tripathi</b><small>Organizing Co-Chairperson</small></div>
       <div class="leader"><img src="assets/p-rajesh.webp" alt="Dr Rajesh Kumar Sharma" loading="lazy"><b>Dr Rajesh Kumar Sharma</b><small>Organizing Co-Chairperson</small></div>
       <div class="leader"><img src="assets/p-harvinder.webp" alt="Dr Harvinder Singh Chhabra" loading="lazy"><b>Dr Harvinder Singh Chhabra</b><small>Org. Secretary cum Treasurer</small></div>
@@ -2094,6 +2284,18 @@ thead th.now small{color:rgba(255,255,255,.8)}
         <a class="btn btn-solid" href="mailto:2027forensicmedicon@gmail.com?subject=FORENSIC%20MEDICON%202027%20—%20Registration%20enquiry">Email the organisers</a>
         <a class="btn btn-line" href="#register">Back to fees</a>
       </div>
+      <div class="venue-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg>
+        <div>
+          <h4>Venue</h4>
+          <p><strong style="color:var(--cream)">Department of Forensic Medicine &amp; Toxicology</strong><br>
+          Himalayan Institute of Medical Sciences<br>
+          Swami Rama Himalayan University<br>
+          Swami Ram Nagar, Jolly Grant, Doiwala<br>
+          Dehradun 248016, Uttarakhand</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Swami+Rama+Himalayan+University%2C+Jolly+Grant%2C+Dehradun" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg>Open in Google Maps</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2177,7 +2379,7 @@ thead th.now small{color:rgba(255,255,255,.8)}
 
   /* scroll: progress bar, nav state, active link */
   var nav=document.getElementById('nav'), prog=document.getElementById('prog');
-  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var links=[].slice.call(document.querySelectorAll('.nav-links > li > a'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
   var ticking=false;
   function frame(){
