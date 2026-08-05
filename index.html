@@ -387,6 +387,72 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
 /* ═══════════ CONTENT ═══════════ */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.5rem)}
 
+.claim{
+  margin:clamp(1.6rem,3.4vw,2.3rem) auto .9rem;max-width:22ch;
+  font-family:var(--display);font-weight:400;line-height:1.08;
+  font-size:clamp(1.5rem,4.6vw,2.9rem);letter-spacing:.015em;color:var(--cream);
+}
+.claim em{font-style:normal;color:var(--gold-pale);text-shadow:0 0 34px rgba(246,184,60,.35)}
+#theme .lede{max-width:60ch;margin-inline:auto}
+
+/* the five conditions, as a sequence */
+.verbs{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:.5rem clamp(.5rem,1.6vw,1rem);margin:clamp(1.8rem,3.6vw,2.5rem) auto 0;
+}
+.verbs span{
+  font-family:var(--data);font-weight:700;font-size:clamp(.62rem,1.5vw,.78rem);
+  letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--gold-pale);
+  border:1px solid var(--hair-2);border-radius:999px;padding:.55rem 1.05rem;
+  background:var(--ink-3);opacity:0;transform:translateY(10px);
+}
+.verbs i{font-style:normal;color:var(--gold-deep);font-size:.95rem;opacity:0;line-height:1}
+.rise.in .verbs span,.rise.in .verbs i{opacity:1;transform:none;transition:opacity .5s ease,transform .5s var(--ease)}
+.rise.in .verbs > *:nth-child(1){transition-delay:.05s}
+.rise.in .verbs > *:nth-child(2){transition-delay:.13s}
+.rise.in .verbs > *:nth-child(3){transition-delay:.21s}
+.rise.in .verbs > *:nth-child(4){transition-delay:.29s}
+.rise.in .verbs > *:nth-child(5){transition-delay:.37s}
+.rise.in .verbs > *:nth-child(6){transition-delay:.45s}
+.rise.in .verbs > *:nth-child(7){transition-delay:.53s}
+.rise.in .verbs > *:nth-child(8){transition-delay:.61s}
+.rise.in .verbs > *:nth-child(9){transition-delay:.69s}
+
+/* the five aims */
+.aims{
+  list-style:none;margin:clamp(1.8rem,3.6vw,2.6rem) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(302px,1fr));gap:1.05rem;
+}
+.aim{
+  position:relative;height:100%;overflow:hidden;
+  padding:1.5rem 1.4rem 1.6rem;border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 72%);
+  border:1px solid var(--hair-2);
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s ease,transform .6s var(--ease),border-color .4s,box-shadow .4s;
+}
+.rise.in .aim{opacity:1;transform:none}
+.rise.in .aim:nth-child(1){transition-delay:.05s}
+.rise.in .aim:nth-child(2){transition-delay:.13s}
+.rise.in .aim:nth-child(3){transition-delay:.21s}
+.rise.in .aim:nth-child(4){transition-delay:.29s}
+.rise.in .aim:nth-child(5){transition-delay:.37s}
+.aim:hover{border-color:rgba(246,184,60,.45);box-shadow:0 24px 48px -30px #000;transform:translateY(-5px)}
+.aim .n{
+  position:absolute;top:.5rem;right:1rem;pointer-events:none;
+  font-family:var(--display);font-weight:400;font-size:3.1rem;line-height:1;
+  color:rgba(246,184,60,.1);transition:color .4s;
+}
+.aim:hover .n{color:rgba(246,184,60,.24)}
+.aim h4{
+  margin:0 0 .6rem;position:relative;font-family:var(--data);font-weight:700;
+  font-size:.66rem;letter-spacing:.19em;margin-right:-.19em;
+  text-transform:uppercase;color:var(--gold);
+}
+.aim p{margin:0;position:relative;font-size:.92rem;line-height:1.72;color:var(--mist)}
+@media (prefers-reduced-motion:reduce){
+  .verbs span,.verbs i,.aim{opacity:1;transform:none}
+}
 .need{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1rem;margin-top:1.6rem;padding:0}
 .need li{list-style:none}
 .need .card{height:100%;display:flex;gap:.9rem;align-items:flex-start;padding:1.15rem 1.25rem;transition:border-color .35s,transform .35s var(--ease)}
@@ -1035,18 +1101,27 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
 <section id="theme" style="background:var(--ink-2)">
   <div class="shell">
     <div class="band-wrap rise"><div class="band"><h2>Conference Theme</h2></div></div>
-    <div class="rise" style="text-align:center;max-width:840px;margin-inline:auto">
+    <div class="rise" style="text-align:center">
       <p class="theme-head" style="font-size:clamp(1.6rem,4.4vw,2.75rem)">Translational Forensics</p>
-      <p class="theme-sub" style="margin-bottom:1.4rem;font-size:clamp(.92rem,2.1vw,1.22rem)">Uniting <b>Medicine</b>, <b>Nursing</b>, <b>Forensics</b>, <b>Judiciary</b>, <b>Police</b> and <b>Society</b></p>
-      <p class="lede">Forensic Medicine does not function in isolation. Its impact is realised only when scientific findings are accurately documented, properly investigated, scientifically analysed, legally interpreted and socially trusted.</p>
+      <p class="theme-sub" style="font-size:clamp(.92rem,2.1vw,1.22rem)">Uniting <b>Medicine</b>, <b>Nursing</b>, <b>Forensics</b>, <b>Judiciary</b>, <b>Police</b> and <b>Society</b></p>
+
+      <p class="claim">Forensic Medicine does not function <em>in isolation.</em></p>
+      <p class="lede">Its impact is realised only when scientific findings pass intact through every hand that touches them.</p>
+
+      <div class="verbs" aria-label="Documented, investigated, analysed, interpreted, trusted">
+        <span>Documented</span><i>&rarr;</i><span>Investigated</span><i>&rarr;</i><span>Analysed</span><i>&rarr;</i><span>Interpreted</span><i>&rarr;</i><span>Trusted</span>
+      </div>
     </div>
-    <ul class="need rise">
-      <li><div class="card"><span class="n">01</span><p>Strengthen coordination between police investigators, medical experts, nurses and forensic laboratories</p></div></li>
-      <li><div class="card"><span class="n">02</span><p>Improve the quality and reliability of medico-legal documentation and forensic reporting</p></div></li>
-      <li><div class="card"><span class="n">03</span><p>Enhance understanding of forensic evidence within the legal and judicial system</p></div></li>
-      <li><div class="card"><span class="n">04</span><p>Promote scientific integrity and ethical practice in forensic investigations</p></div></li>
-      <li><div class="card"><span class="n">05</span><p>Build public confidence in forensics as a tool for justice</p></div></li>
+
+    <p class="eyebrow rise" style="margin-top:clamp(2.4rem,5vw,3.2rem)">What the theme sets out to do</p>
+    <ul class="aims rise">
+      <li class="aim"><span class="n">01</span><h4>Coordination</h4><p>Strengthen coordination between police investigators, medical experts, nurses and forensic laboratories.</p></li>
+      <li class="aim"><span class="n">02</span><h4>Documentation</h4><p>Improve the quality and reliability of medico-legal documentation and forensic reporting.</p></li>
+      <li class="aim"><span class="n">03</span><h4>Legal understanding</h4><p>Enhance understanding of forensic evidence within the legal and judicial system.</p></li>
+      <li class="aim"><span class="n">04</span><h4>Integrity</h4><p>Promote scientific integrity and ethical practice in forensic investigations.</p></li>
+      <li class="aim"><span class="n">05</span><h4>Public trust</h4><p>Build public confidence in forensics as a tool for justice.</p></li>
     </ul>
+
     <div class="card rise" style="margin-top:2rem">
       <p class="eyebrow">Flagship session</p>
       <h3 style="margin:0 0 .6rem;font-size:1.32rem;color:var(--gold-pale)">The Justice Chain Forum</h3>
