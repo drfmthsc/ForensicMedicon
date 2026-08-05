@@ -87,6 +87,46 @@ strong{font-weight:600;color:var(--cream)}
   letter-spacing:.3em;margin-right:-.3em;color:var(--gold-pale);
   text-shadow:0 0 20px rgba(246,184,60,.45);
 }
+.about-lead{
+  text-align:center;max-width:52ch;margin:0 auto clamp(1.5rem,3vw,2rem);
+  font-size:clamp(1.1rem,2.3vw,1.42rem);line-height:1.55;font-weight:300;color:var(--cream);
+}
+.about-lead b{font-weight:600;color:var(--gold-pale)}
+.facts{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;
+  margin-bottom:clamp(2.2rem,4.5vw,3rem);
+}
+.facts span{
+  font-family:var(--data);font-weight:600;font-size:.66rem;letter-spacing:.18em;
+  margin-right:-.18em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--hair-2);border-radius:999px;padding:.52rem 1.15rem;background:var(--ink-2);
+  transition:border-color .3s,color .3s;
+}
+.facts span:hover{border-color:var(--gold);color:var(--gold-pale)}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,3.2vw,2.6rem)}
+.three-col > div{padding-top:1.15rem;border-top:2px solid rgba(246,184,60,.35)}
+.three-col h4{
+  margin:0 0 .8rem;font-family:var(--data);font-weight:600;font-size:.67rem;
+  letter-spacing:.18em;margin-right:-.18em;text-transform:uppercase;color:var(--gold);
+}
+.three-col p{margin:0 0 .8rem;font-size:.95rem;line-height:1.8;color:var(--mist);max-width:42ch}
+.three-col p:last-child{margin-bottom:0}
+.three-col strong{color:var(--cream)}
+.definition{
+  margin-top:clamp(2rem,4vw,2.8rem);display:grid;grid-template-columns:auto 1fr;
+  gap:clamp(1.2rem,3vw,2.2rem);align-items:center;border-left:3px solid var(--gold);
+}
+.definition .term{
+  font-family:var(--display);font-weight:400;line-height:1.05;
+  font-size:clamp(1.5rem,3.6vw,2.3rem);letter-spacing:.015em;color:var(--gold-pale);
+  text-shadow:0 0 30px rgba(246,184,60,.3);
+}
+.definition p{margin:0;font-size:clamp(.95rem,1.9vw,1.08rem);line-height:1.7;color:var(--mist)}
+@media(max-width:900px){
+  .three-col{grid-template-columns:1fr;gap:1.6rem}
+  .three-col p{max-width:none}
+  .definition{grid-template-columns:1fr;gap:.8rem}
+}
 .inspiration{
   margin-top:2rem;border-left:3px solid var(--gold);
   display:grid;grid-template-columns:auto 1fr;
@@ -880,17 +920,39 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
 <section id="about">
   <div class="shell">
     <div class="band-wrap rise"><div class="band"><h2>About the Conference</h2></div></div>
-    <div class="two rise">
+    <p class="about-lead rise"><b>FORENSIC MEDICON 2027</b> is the 48th National Conference of the Indian Academy of Forensic Medicine, hosted by Swami Rama Himalayan University in Dehradun.</p>
+
+    <div class="facts rise">
+      <span>48th Edition</span>
+      <span>2–6 February 2027</span>
+      <span>Dehradun, Uttarakhand</span>
+      <span>5 Skill Labs</span>
+      <span>6 Disciplines</span>
+    </div>
+
+    <div class="three-col rise">
       <div>
-        <p class="eyebrow">A premier national platform</p>
-        <p class="lede">The 48th National Conference of the Indian Academy of Forensic Medicine (IAFM) — <strong>FORENSIC MEDICON 2027</strong> — is hosted by Swami Rama Himalayan University, Dehradun. It brings together experts across Forensic Medicine, Nursing, Forensic Science, Law and Criminal Justice.</p>
-        <p class="lede">This year's landmark event is organised with the active support and collaboration of the <strong>Trained Nurses' Association of India (TNAI), Uttarakhand State Branch</strong>.</p>
+        <h4>Who it brings together</h4>
+        <p>Experts from across <strong>Forensic Medicine, Nursing, Forensic Science, Law and Criminal Justice</strong>.</p>
+        <p>This year's edition is organised with the active support of the <strong>Trained Nurses' Association of India (TNAI), Uttarakhand State Branch</strong>.</p>
       </div>
       <div>
-        <p class="lede">Effective justice delivery relies on seamless coordination among police investigators, medical professionals, forensic scientists, the judiciary and society. Forensic nursing forms the frontline of this ecosystem: as immediate responders to trauma and violence, nursing professionals bridge clinical care with early evidence preservation and meticulous medico-legal documentation.</p>
-        <p class="lede">FORENSIC MEDICON 2027 centres on <strong>Translational Forensics</strong> — turning academic research, nursing insight and scientific innovation into practical investigative tools, bedside practice and reliable courtroom evidence.</p>
+        <h4>Why it matters</h4>
+        <p>Justice depends on coordination. Police investigators, medical professionals, forensic scientists, the judiciary and society each hold one link of the same chain.</p>
+        <p>When any link is weak, evidence fails — however sound the science behind it.</p>
+      </div>
+      <div>
+        <h4>The nursing frontline</h4>
+        <p>Nurses are the first to meet victims of trauma and violence, often hours before an investigator arrives.</p>
+        <p>They bridge clinical care with <strong>early evidence preservation</strong> and meticulous medico-legal documentation — which is why nursing sits at the centre of this year's theme.</p>
       </div>
     </div>
+
+    <div class="card definition rise">
+      <span class="term">Translational<br>Forensics</span>
+      <p>Turning academic research, nursing insight and scientific innovation into three practical things: <strong>investigative tools</strong> that work in the field, <strong>bedside practice</strong> that preserves evidence, and <strong>courtroom evidence</strong> that holds up under scrutiny.</p>
+    </div>
+
     <div class="card inspiration rise">
       <figure class="sr-portrait">
         <img src="assets/p-swamirama.webp" alt="Swami Rama, founder of the institution" loading="lazy">
