@@ -831,8 +831,12 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
 .reg-cta .btn{font-size:1rem;padding:1rem 2.4rem}
 .btn.soon{opacity:.85;cursor:default}
 .btn.soon:hover{transform:none}
-.notes h3 svg,.warn svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-.notes h3{display:flex;align-items:center;gap:.55rem}
+.notes h3 svg,.card h3 svg,.warn svg{
+  width:16px;height:16px;flex:0 0 auto;
+  stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+}
+.notes h3,.card h3:has(svg){display:flex;align-items:center;gap:.55rem}
+.card h3 svg{display:inline-block;vertical-align:-.15em;margin-right:.45rem}
 .warn{display:flex;gap:.8rem;align-items:flex-start}
 .warn svg{stroke:var(--ember);margin-top:.15rem}
 @media(max-width:720px){
