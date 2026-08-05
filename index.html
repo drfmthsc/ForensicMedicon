@@ -974,6 +974,94 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
   margin-right:-.15em;text-transform:uppercase;color:var(--gold);
 }
 
+/* ── Accommodation ─────────────────────────────────────────── */
+.stay-note{
+  display:flex;gap:1.15rem;align-items:flex-start;
+  margin:clamp(1.6rem,3.4vw,2.3rem) 0 clamp(1.8rem,3.8vw,2.6rem);
+  padding:clamp(1.3rem,2.8vw,1.8rem) clamp(1.3rem,3vw,2rem);
+  border:2px solid transparent;border-radius:18px;
+  background:
+    radial-gradient(ellipse 70% 100% at 12% 50%,rgba(246,184,60,.14),transparent 68%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 30%,#E8892B 60%,#FFE9A8) border-box;
+  box-shadow:0 0 60px -26px rgba(246,184,60,.45);
+}
+.stay-note svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem}
+.stay-note h4{
+  margin:0 0 .5rem;font-family:var(--data);font-weight:700;font-size:.7rem;
+  letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--gold-pale);
+}
+.stay-note p{margin:0 0 .6rem;font-size:.95rem;line-height:1.7;color:var(--mist)}
+.stay-note p:last-child{margin-bottom:0}
+.stay-note b{color:var(--cream);font-weight:600}
+.stay-note .watch{
+  display:inline-block;margin-top:.3rem;font-family:var(--data);font-weight:700;font-size:.66rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#0a0a0c;background:var(--band);
+  padding:.4rem .9rem;border-radius:999px;
+}
+
+.stay-group{
+  margin-bottom:.8rem;border:1px solid var(--hair-2);border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 70%);overflow:hidden;
+  transition:border-color .35s;
+}
+.stay-group[open],.stay-group:hover{border-color:var(--hair)}
+.stay-group summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:1rem;
+  padding:1.15rem 1.4rem;
+}
+.stay-group summary::-webkit-details-marker{display:none}
+.sg-dist{
+  flex:0 0 auto;font-family:var(--display);font-weight:400;
+  font-size:clamp(1rem,2.2vw,1.28rem);letter-spacing:.015em;color:var(--gold-pale);
+}
+.sg-lab{font-size:.9rem;color:var(--mist)}
+.sg-count{
+  margin-left:auto;font-family:var(--data);font-weight:700;font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--hair);border-radius:999px;padding:.3rem .7rem;
+}
+.stay-group .chev{
+  flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--hair);
+  display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:1.1rem;line-height:1;
+  transition:transform .35s var(--ease),background .3s;
+}
+.stay-group summary:hover .chev{background:rgba(246,184,60,.12)}
+.stay-group[open] .chev{transform:rotate(135deg)}
+.stay-list{border-top:1px solid var(--hair-2);padding:.4rem .6rem .8rem}
+.stay-group[open] .stay-list{animation:fadeUp .45s var(--ease)}
+.stay-row{
+  display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:.4rem 1rem;
+  padding:.85rem .8rem;border-radius:12px;transition:background .25s;
+}
+.stay-row:hover{background:rgba(246,184,60,.055)}
+.stay-row + .stay-row{border-top:1px solid rgba(246,184,60,.07)}
+.km-pill{
+  font-family:var(--data);font-weight:700;font-size:.66rem;letter-spacing:.08em;
+  color:var(--gold);text-align:center;border:1px solid var(--hair-2);
+  border-radius:999px;padding:.3rem .2rem;background:var(--ink-2);
+}
+.stay-name{font-weight:600;font-size:.94rem;line-height:1.35}
+.stay-name small{
+  display:block;margin-top:.2rem;font-weight:400;font-size:.78rem;color:var(--faint);
+}
+.stay-name em{font-style:normal;color:var(--gold)}
+.stay-tel{
+  display:inline-flex;align-items:center;gap:.45rem;white-space:nowrap;
+  font-family:var(--data);font-weight:600;font-size:.72rem;letter-spacing:.04em;
+  color:var(--gold);text-decoration:none;border:1px solid var(--hair);
+  border-radius:999px;padding:.42rem .85rem;transition:background .3s,color .3s,border-color .3s;
+}
+.stay-tel:hover{background:var(--band);color:#0a0a0c;border-color:transparent}
+.stay-tel svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+.stay-none{font-family:var(--data);font-size:.72rem;color:var(--faint);padding:.42rem .3rem}
+@media(max-width:700px){
+  .stay-row{grid-template-columns:74px 1fr;}
+  .stay-row .stay-tel,.stay-row .stay-none{grid-column:2;justify-self:start;margin-top:.2rem}
+  .stay-group summary{flex-wrap:wrap;gap:.5rem .8rem}
+  .sg-count{margin-left:0;order:3}
+  .stay-group .chev{margin-left:auto}
+}
 .trip .ph.iconic{
   display:grid;place-items:center;cursor:default;
   background:
@@ -1126,6 +1214,7 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <li><a href="#labs">Skill Labs</a></li>
       <li><a href="#register">Register</a></li>
       <li><a href="#committee">Committee</a></li>
+      <li><a href="#stay">Stay</a></li>
       <li><a href="#travel">Travel</a></li>
       <li><a href="#food">Food</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1546,6 +1635,84 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6.2l10-2.2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span><h4>Cultural &amp; Social</h4><p>Dr Jyoti Diwedi<br>Dr D. S. Gaur<br>Dr Rajesh Sharma</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11v2.2a1 1 0 0 0 1 1h2.3l7.7 3.9V6.1L6.3 10H4a1 1 0 0 0-1 1z"/><path d="M17.8 9.2a4.2 4.2 0 0 1 0 5.8"/><path d="M6.5 15v3.6a1 1 0 0 0 1 1h1.2a1 1 0 0 0 1-1v-2.7"/></svg></span><h4>Media &amp; Publicity</h4><p>Dr Deep Shikha<br>Dr Neha Sharma</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14v-2.2a8 8 0 0 1 16 0V14"/><path d="M4.2 13.6A2.2 2.2 0 0 1 6.4 16v2a2.2 2.2 0 0 1-4.4 0v-2a2.2 2.2 0 0 1 2.2-2.4zM19.8 13.6A2.2 2.2 0 0 0 17.6 16v2a2.2 2.2 0 0 0 4.4 0v-2a2.2 2.2 0 0 0-2.2-2.4z"/><path d="M17.6 19.6v.4a2.4 2.4 0 0 1-2.4 2.4h-2.4"/></svg></span><h4>Delegate Assistance</h4><p>Dr Harvinder Singh<br>Dept. of Forensic Medicine &amp; Toxicology<br><a href="tel:+919814904440" style="color:var(--gold);font-family:var(--data);font-size:.78rem;text-decoration:none">9814904440</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ ACCOMMODATION ══════ -->
+<section id="stay" style="background:var(--ink-2)">
+  <div class="shell">
+    <div class="band-wrap rise"><div class="band"><h2>Accommodation</h2></div></div>
+    <p class="lede rise" style="text-align:center;max-width:780px;margin-inline:auto">Thirty-seven hotels, homestays and resorts within 20 km of the venue, grouped by distance. Tap a band to see the properties and call them directly.</p>
+
+    <div class="stay-note rise">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3" width="17" height="14" rx="3"/><path d="M3.5 11.5h17"/><path d="M7 17v3M17 17v3"/><circle cx="8" cy="14.3" r=".9"/><circle cx="16" cy="14.3" r=".9"/><path d="M2 8h1.5M20.5 8H22"/></svg>
+      <div>
+        <h4>Transport &amp; conference rates</h4>
+        <p><b>Shuttle buses will run from selected hotels only.</b> The list of hotels covered, along with pick-up points and timings, will be announced closer to the conference.</p>
+        <p>Delegates book directly with the property. Distances are straight-line from the university — road distances will be a little longer. Ratings are from Google and change over time.</p>
+        <p><span class="watch">Watch this space &amp; the official IAFM WhatsApp group</span></p>
+      </div>
+    </div>
+
+    <div class="rise">
+      <details class="stay-group" open>
+        <summary><span class="sg-dist">Within 5 km</span><span class="sg-lab">Jolly Grant — hotels</span><span class="sg-count">8 properties</span><i class="chev">+</i></summary>
+        <div class="stay-list">
+          <div class="stay-row"><span class="km-pill">1.1 km</span><span class="stay-name">Hotel Padmini Palace<small>Hotel · <em>★ 4.0 (1,798)</em></small></span><a class="stay-tel" href="tel:+918477051111"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>84770 51111</a></div>
+          <div class="stay-row"><span class="km-pill">1.4 km</span><span class="stay-name">Star Light Hotel<small>Hotel · <em>★ 4.6 (14)</em></small></span><span class="stay-none">No listed number</span></div>
+          <div class="stay-row"><span class="km-pill">1.4 km</span><span class="stay-name">Hotel Hi-Way Inn<small>Hotel · <em>★ 3.7 (112)</em></small></span><a class="stay-tel" href="tel:+919536277990"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>95362 77990</a></div>
+          <div class="stay-row"><span class="km-pill">1.6 km</span><span class="stay-name">MJ Aero Suites<small>Hotel · <em>★ 4.3 (550)</em></small></span><a class="stay-tel" href="tel:+918650031333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>86500 31333</a></div>
+          <div class="stay-row"><span class="km-pill">1.8 km</span><span class="stay-name">Hotel Paradise<small>Hotel · <em>★ 3.8 (71)</em></small></span><span class="stay-none">No listed number</span></div>
+          <div class="stay-row"><span class="km-pill">2.1 km</span><span class="stay-name">Hotel Rudra<small>Hotel · <em>★ 4.6 (213)</em></small></span><a class="stay-tel" href="tel:+917042424242"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>70424 24242</a></div>
+          <div class="stay-row"><span class="km-pill">2.9 km</span><span class="stay-name">Utsav Hotel<small>Hotel · <em>★ 3.9 (81)</em></small></span><a class="stay-tel" href="tel:+917302385221"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>73023 85221</a></div>
+          <div class="stay-row"><span class="km-pill">4.3 km</span><span class="stay-name">Hotel 7Heaven<small>Hotel · <em>★ 4.4 (275)</em></small></span><a class="stay-tel" href="tel:+918218681608"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>82186 81608</a></div>
+        </div>
+      </details>
+      <details class="stay-group">
+        <summary><span class="sg-dist">Within 5 km</span><span class="sg-lab">Homestays &amp; budget</span><span class="sg-count">5 properties</span><i class="chev">+</i></summary>
+        <div class="stay-list">
+          <div class="stay-row"><span class="km-pill">1.8 km</span><span class="stay-name">Gaharwar Home Stay &amp; Guest House<small>Homestay · <em>★ 4.6 (69)</em></small></span><a class="stay-tel" href="tel:+919557395681"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>95573 95681</a></div>
+          <div class="stay-row"><span class="km-pill">1.8 km</span><span class="stay-name">Comfort Inn Homestay<small>Homestay · <em>★ 4.3 (127)</em></small></span><a class="stay-tel" href="tel:+919756302080"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>97563 02080</a></div>
+          <div class="stay-row"><span class="km-pill">2.2 km</span><span class="stay-name">Airport Luxury Nature Valley Homestay<small>Homestay · <em>★ 4.9 (780)</em></small></span><a class="stay-tel" href="tel:+918923085565"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>89230 85565</a></div>
+          <div class="stay-row"><span class="km-pill">2.5 km</span><span class="stay-name">Nandini Homestay<small>Homestay · <em>★ 4.3 (347)</em></small></span><a class="stay-tel" href="tel:+918630401099"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>86304 01099</a></div>
+          <div class="stay-row"><span class="km-pill">4.4 km</span><span class="stay-name">Hoztel Jollygrant Doon<small>Hostel · <em>★ 4.8 (253)</em></small></span><a class="stay-tel" href="tel:+919259591155"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>92595 91155</a></div>
+        </div>
+      </details>
+      <details class="stay-group">
+        <summary><span class="sg-dist">5 to 10 km</span><span class="sg-lab">Dehradun Road, Lal Tappar &amp; Thano Road</span><span class="sg-count">11 properties</span><i class="chev">+</i></summary>
+        <div class="stay-list">
+          <div class="stay-row"><span class="km-pill">3.8 km</span><span class="stay-name">jüSTa Nature's Nest Resort<small>Resort · <em>★ 4.4 (68)</em></small></span><a class="stay-tel" href="tel:+919286500391"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>92865 00391</a></div>
+          <div class="stay-row"><span class="km-pill">4.4 km</span><span class="stay-name">Hotel Vasdaa Grand, Lachhiwala<small>Hotel · <em>★ 4.6 (1,176)</em></small></span><a class="stay-tel" href="tel:+918006291888"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>80062 91888</a></div>
+          <div class="stay-row"><span class="km-pill">4.6 km</span><span class="stay-name">Hotel Surya Inn, Lal Tappar<small>Hotel · <em>★ 4.6 (98)</em></small></span><a class="stay-tel" href="tel:+917900998555"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>79009 98555</a></div>
+          <div class="stay-row"><span class="km-pill">5.1 km</span><span class="stay-name">The Aatithiyam Resort, Bhaniyawala<small>Resort · <em>★ 4.5 (521)</em></small></span><a class="stay-tel" href="tel:+917457831672"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>74578 31672</a></div>
+          <div class="stay-row"><span class="km-pill">6.6 km</span><span class="stay-name">Naturoville Wellness Resort<small>Resort · <em>★ 4.5 (752)</em></small></span><a class="stay-tel" href="tel:+919149361935"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>91493 61935</a></div>
+          <div class="stay-row"><span class="km-pill">7.0 km</span><span class="stay-name">Limelight Hotel, Lal Tappar<small>Hotel · <em>★ 4.7 (53)</em></small></span><a class="stay-tel" href="tel:+919528830869"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>95288 30869</a></div>
+          <div class="stay-row"><span class="km-pill">7.7 km</span><span class="stay-name">SaffronStays Varenya Villa, Thano Rd<small>Villa · <em>★ 4.8 (59)</em></small></span><span class="stay-none">No listed number</span></div>
+          <div class="stay-row"><span class="km-pill">8.8 km</span><span class="stay-name">Parvat Homes, Thano<small>Resort · <em>★ 4.9 (247)</em></small></span><a class="stay-tel" href="tel:+919810000609"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>98100 00609</a></div>
+          <div class="stay-row"><span class="km-pill">8.8 km</span><span class="stay-name">SaffronStays Timber Crest, Thano<small>Villa · <em>★ 4.8 (33)</em></small></span><span class="stay-none">No listed number</span></div>
+          <div class="stay-row"><span class="km-pill">9.6 km</span><span class="stay-name">Dream Valley Resort<small>Resort · <em>★ 4.1 (486)</em></small></span><a class="stay-tel" href="tel:+918279935654"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>82799 35654</a></div>
+          <div class="stay-row"><span class="km-pill">9.9 km</span><span class="stay-name">The Chirping Sal Villa, Kalimati<small>Homestay · <em>★ 5.0 (35)</em></small></span><a class="stay-tel" href="tel:+919084306877"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>90843 06877</a></div>
+        </div>
+      </details>
+      <details class="stay-group">
+        <summary><span class="sg-dist">10 to 20 km</span><span class="sg-lab">Haridwar Road, Harrawala &amp; Thano Road</span><span class="sg-count">13 properties</span><i class="chev">+</i></summary>
+        <div class="stay-list">
+          <div class="stay-row"><span class="km-pill">10.0 km</span><span class="stay-name">Le OVAL Hotel &amp; Resort, Harrawala<small>Hotel · <em>★ 4.8 (154)</em></small></span><a class="stay-tel" href="tel:+918791434002"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>87914 34002</a></div>
+          <div class="stay-row"><span class="km-pill">13.0 km</span><span class="stay-name">Lemon Tree Hotel, Mall of Dehradun<small>Hotel · <em>★ 4.7 (237)</em></small></span><a class="stay-tel" href="tel:+911357131900"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>0135 713 1900</a></div>
+          <div class="stay-row"><span class="km-pill">13.8 km</span><span class="stay-name">ROOTz Resort, Thano Rd<small>Resort · <em>★ 4.8 (1,022)</em></small></span><a class="stay-tel" href="tel:+917895162299"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>78951 62299</a></div>
+          <div class="stay-row"><span class="km-pill">14.8 km</span><span class="stay-name">Hindwan's Farms &amp; Resort<small>Resort · <em>★ 4.3 (196)</em></small></span><a class="stay-tel" href="tel:+918477991115"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>84779 91115</a></div>
+          <div class="stay-row"><span class="km-pill">15.4 km</span><span class="stay-name">Glenville Forest Resort &amp; Spa<small>Resort · <em>★ 4.1 (850)</em></small></span><a class="stay-tel" href="tel:+917618410002"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>76184 10002</a></div>
+          <div class="stay-row"><span class="km-pill">16.3 km</span><span class="stay-name">Prashanti Farms &amp; Resort<small>Resort · <em>★ 4.8 (88)</em></small></span><a class="stay-tel" href="tel:+917302660051"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>73026 60051</a></div>
+          <div class="stay-row"><span class="km-pill">16.9 km</span><span class="stay-name">Hotel JSR Continental, Dharampur<small>Hotel · <em>★ 4.0 (5,207)</em></small></span><a class="stay-tel" href="tel:+919045017879"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>90450 17879</a></div>
+          <div class="stay-row"><span class="km-pill">17.0 km</span><span class="stay-name">Pride Premier Solitaire<small>Hotel · <em>★ 4.3 (5,969)</em></small></span><a class="stay-tel" href="tel:+918650002072"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>86500 02072</a></div>
+          <div class="stay-row"><span class="km-pill">17.1 km</span><span class="stay-name">Hotel Meenakshi Garden<small>Hotel · <em>★ 4.6 (52)</em></small></span><a class="stay-tel" href="tel:+918065068848"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>080 6506 8848</a></div>
+          <div class="stay-row"><span class="km-pill">17.2 km</span><span class="stay-name">Hotel NJ Portico, Haridwar Rd<small>Hotel · <em>★ 4.2 (993)</em></small></span><a class="stay-tel" href="tel:+917417052502"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>74170 52502</a></div>
+          <div class="stay-row"><span class="km-pill">19.1 km</span><span class="stay-name">MJ Residency, Race Course<small>Hotel · <em>★ 4.1 (2,974)</em></small></span><a class="stay-tel" href="tel:+916399448844"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>63994 48844</a></div>
+          <div class="stay-row"><span class="km-pill">19.5 km</span><span class="stay-name">Hotel Sukoon, Dalanwala<small>Hotel · <em>★ 4.1 (661)</em></small></span><a class="stay-tel" href="tel:+917500340034"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>75003 40034</a></div>
+          <div class="stay-row"><span class="km-pill">20.1 km</span><span class="stay-name">Hotel Doon's Pride<small>Hotel · <em>★ 4.5 (1,598)</em></small></span><a class="stay-tel" href="tel:+917060351353"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a1.9 1.9 0 0 1-2 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.9 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2l-1.2 1.2a15 15 0 0 0 5.6 5.6l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>70603 51353</a></div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
