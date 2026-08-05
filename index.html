@@ -1264,27 +1264,49 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
 .where{font-size:.78rem;color:var(--gold);font-family:var(--data);letter-spacing:.03em}
 
 /* ═══════════ CONTACT / FOOTER ═══════════ */
-.venue-card{
-  display:grid;grid-template-columns:auto 1fr;gap:1.15rem;align-items:start;
-  max-width:640px;margin:clamp(1.6rem,3.4vw,2.2rem) auto 0;
-  padding:1.35rem 1.5rem;text-align:left;
-  background:var(--ink-2);border:1px solid var(--hair-2);border-radius:14px;
+.venue-panel{
+  display:grid;grid-template-columns:1.12fr 1fr;gap:0;overflow:hidden;
+  margin-bottom:clamp(1.6rem,3.4vw,2.4rem);
+  border:2px solid transparent;border-radius:20px;
+  background:
+    radial-gradient(ellipse 70% 100% at 90% 50%,rgba(246,184,60,.12),transparent 68%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 30%,#E8892B 60%,#FFE9A8) border-box;
+  box-shadow:0 0 70px -30px rgba(246,184,60,.45),0 28px 60px -36px #000;
 }
-.venue-card svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:.2rem}
-.venue-card h4{
-  margin:0 0 .5rem;font-family:var(--data);font-weight:700;font-size:.66rem;
-  letter-spacing:.18em;margin-right:-.18em;text-transform:uppercase;color:var(--gold);
+.venue-panel .ph{border:0;border-radius:0;height:100%;min-height:280px;cursor:zoom-in}
+.venue-panel .ph img{height:100%}
+.venue-body{padding:clamp(1.6rem,3.4vw,2.4rem)}
+.venue-body h3{
+  margin:0 0 .3rem;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.25rem,2.9vw,1.75rem);letter-spacing:.015em;color:var(--gold-pale);
 }
-.venue-card p{margin:0 0 .7rem;font-size:.9rem;line-height:1.65;color:var(--mist)}
-.venue-card a.map{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:var(--data);font-weight:600;font-size:.68rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--gold);text-decoration:none;
-  border:1px solid var(--hair);border-radius:999px;padding:.45rem .95rem;
-  transition:background .3s,color .3s,border-color .3s;
+.venue-body .dept{
+  margin:0 0 .9rem;font-family:var(--data);font-weight:600;font-size:.68rem;
+  letter-spacing:.16em;margin-right:-.16em;text-transform:uppercase;color:var(--gold);
 }
-.venue-card a.map:hover{background:var(--band);color:#0a0a0c;border-color:transparent}
-@media(max-width:640px){ .venue-card{grid-template-columns:1fr} }
+.venue-body address{margin:0 0 1.2rem;font-style:normal;font-size:.92rem;line-height:1.7;color:var(--mist)}
+.venue-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
+.venue-chips span{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--data);font-weight:600;font-size:.62rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--hair-2);border-radius:999px;padding:.45rem .85rem;background:var(--ink-2);
+}
+.venue-chips svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.venue-body a.map{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--data);font-weight:700;font-size:.68rem;letter-spacing:.13em;
+  text-transform:uppercase;color:#0a0a0c;background:var(--band);
+  border-radius:999px;padding:.65rem 1.3rem;text-decoration:none;
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.venue-body a.map:hover{transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(246,184,60,.9)}
+.venue-body a.map svg{width:15px;height:15px;stroke:#0a0a0c;fill:none;stroke-width:1.9}
+@media(max-width:860px){
+  .venue-panel{grid-template-columns:1fr}
+  .venue-panel .ph{min-height:0;aspect-ratio:16/9}
+}
 .helpdesk{text-align:center;border:1px solid var(--gold);border-radius:16px;padding:clamp(2.2rem,5vw,3.4rem) clamp(1.25rem,4vw,2.5rem);background:radial-gradient(ellipse at 50% 0%,rgba(246,184,60,.12),transparent 70%),var(--ink-2);position:relative;overflow:hidden}
 .helpdesk::before{content:"";position:absolute;inset:-50% -20% auto;height:200%;background:conic-gradient(from 0deg,transparent,rgba(246,184,60,.07),transparent 40%);animation:spin 16s linear infinite}
 @keyframes spin{to{transform:rotate(1turn)}}
@@ -1574,6 +1596,17 @@ thead th.now small{color:rgba(255,255,255,.8)}
 .sub a:hover{background:rgba(168,115,11,.1)}
 @media(max-width:780px){ .sub{background:transparent} }
 .venue-card a.map:hover{color:#26200F}
+
+
+.venue-panel{
+  background:
+    radial-gradient(ellipse 70% 100% at 90% 50%,rgba(168,115,11,.12),transparent 68%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.venue-chips span{background:#fff}
+.venue-body a.map{color:#26200F}
 
 /* the seats chips stay navy — they read as the justice chain */
 .seats span{background:#12326d;color:#FFE9A8;border-color:rgba(168,115,11,.5)}
@@ -2270,6 +2303,29 @@ thead th.now small{color:rgba(255,255,255,.8)}
 <!-- ══════ CONTACT ══════ -->
 <section id="contact" style="background:var(--ink-2)">
   <div class="shell">
+    <div class="venue-panel rise">
+      <button class="ph" data-lb="Himalayan Institute of Medical Sciences, Swami Rama Himalayan University">
+        <img src="assets/venue-campus.webp" alt="Himalayan Institute of Medical Sciences, Swami Rama Himalayan University" loading="lazy">
+        <span class="shots">View photo</span>
+      </button>
+      <div class="venue-body">
+        <p class="eyebrow strong">The venue</p>
+        <h3>Himalayan Institute of Medical Sciences</h3>
+        <p class="dept">Department of Forensic Medicine &amp; Toxicology</p>
+        <address>
+          Swami Rama Himalayan University<br>
+          Swami Ram Nagar, Jolly Grant, Doiwala<br>
+          Dehradun 248016, Uttarakhand
+        </address>
+        <div class="venue-chips">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12l20-7-7 20-3-8-10-5z"/></svg>Jolly Grant Airport · minutes away</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l-2-3M16 21l2-3"/></svg>Dehradun station · 25 km</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14l1.5-5A3 3 0 0 1 7.4 7h9.2a3 3 0 0 1 2.9 2L21 14v4h-3M3 18v-4M6 18h12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Delhi · 235 km</span>
+        </div>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Swami+Rama+Himalayan+University%2C+Jolly+Grant%2C+Dehradun" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg>Open in Google Maps</a>
+      </div>
+    </div>
+
     <div class="helpdesk rise">
       <p class="eyebrow" style="text-align:center">Welcome</p>
       <h2>Help Desk</h2>
@@ -2283,18 +2339,6 @@ thead th.now small{color:rgba(255,255,255,.8)}
       <div class="cta-row">
         <a class="btn btn-solid" href="mailto:2027forensicmedicon@gmail.com?subject=FORENSIC%20MEDICON%202027%20—%20Registration%20enquiry">Email the organisers</a>
         <a class="btn btn-line" href="#register">Back to fees</a>
-      </div>
-      <div class="venue-card">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg>
-        <div>
-          <h4>Venue</h4>
-          <p><strong style="color:var(--cream)">Department of Forensic Medicine &amp; Toxicology</strong><br>
-          Himalayan Institute of Medical Sciences<br>
-          Swami Rama Himalayan University<br>
-          Swami Ram Nagar, Jolly Grant, Doiwala<br>
-          Dehradun 248016, Uttarakhand</p>
-          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Swami+Rama+Himalayan+University%2C+Jolly+Grant%2C+Dehradun" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg>Open in Google Maps</a>
-        </div>
       </div>
     </div>
   </div>
