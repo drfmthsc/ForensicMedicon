@@ -593,6 +593,29 @@ button.lab-media{cursor:zoom-in}
   font-size:clamp(1.08rem,2.2vw,1.26rem);letter-spacing:.015em;color:var(--gold-pale);
 }
 .lab p{margin:0;font-size:.87rem;color:var(--mist);line-height:1.65}
+.lab-flag{
+  display:flex;gap:.75rem;align-items:flex-start;margin-top:.35rem;
+  padding:.9rem 1rem;border-radius:12px;
+  border:1px solid rgba(246,184,60,.55);
+  background:
+    radial-gradient(ellipse 90% 120% at 0% 0%,rgba(246,184,60,.18),transparent 70%),
+    var(--ink-2);
+  animation:flagGlow 4.5s ease-in-out infinite;
+}
+@keyframes flagGlow{
+  0%,100%{box-shadow:0 0 22px -14px rgba(246,184,60,.7)}
+  50%    {box-shadow:0 0 34px -10px rgba(246,184,60,.95)}
+}
+.lab-flag svg{
+  width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem;
+}
+.lab-flag b{
+  display:block;margin-bottom:.28rem;font-family:var(--data);font-weight:700;
+  font-size:.63rem;letter-spacing:.15em;margin-right:-.15em;
+  text-transform:uppercase;color:var(--gold-pale);
+}
+.lab-flag p{margin:0;font-size:.84rem;line-height:1.6;color:var(--mist)}
 .lab-note{
   margin-top:1.3rem;display:flex;flex-wrap:wrap;align-items:center;
   gap:.7rem 1.6rem;padding:1.15rem 1.5rem;
@@ -1402,7 +1425,7 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <div class="lab"><button class="lab-media" data-lb="Forensic AI Lab poster" data-full="assets/poster-ai.webp"><img src="assets/lab-ai.webp" alt="Forensic AI Lab" loading="lazy"><span class="num">01</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Forensic AI Lab</h3><p>Hands-on real-time model building for medico-legal applications</p></div></div>
       <div class="lab"><button class="lab-media" data-lb="MCCD Lab poster" data-full="assets/poster-mccd.webp"><img src="assets/lab-mccd.webp" alt="MCCD Lab" loading="lazy"><span class="num">02</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>MCCD Lab</h3><p>Death documentation and certification masterclass</p></div></div>
 
-      <div class="lab"><button class="lab-media" data-lb="Virtual Autopsy &amp; Forensic Imaging Lab poster" data-full="assets/poster-va.webp"><img src="assets/lab-va.webp" alt="Virtual Autopsy &amp; Forensic Imaging Lab" loading="lazy"><span class="num">03</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Virtual Autopsy &amp; Forensic Imaging Lab</h3><p>Cross-sectional imaging and non-invasive post-mortem examination</p></div></div>
+      <div class="lab"><button class="lab-media" data-lb="Virtual Autopsy &amp; Forensic Imaging Lab poster" data-full="assets/poster-va.webp"><img src="assets/lab-va.webp" alt="Virtual Autopsy &amp; Forensic Imaging Lab" loading="lazy"><span class="num">03</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Virtual Autopsy &amp; Forensic Imaging Lab</h3><p>Cross-sectional imaging and non-invasive post-mortem examination</p><div class="lab-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg><div><b>Held at AIIMS Rishikesh</b><p>This lab runs off campus at AIIMS Rishikesh. <strong>Transport will be provided</strong> from the conference venue and back.</p></div></div></div></div>
       <div class="lab"><button class="lab-media" data-lb="Medico-Legal Photography Lab poster" data-full="assets/poster-photo.webp"><img src="assets/lab-photo.webp" alt="Medico-Legal Photography Lab" loading="lazy"><span class="num">04</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Medico-Legal Photography Lab</h3><p>From lens to legal evidence</p></div></div>
       <div class="lab"><button class="lab-media" data-lb="Simulation Lab poster" data-full="assets/poster-sim.webp"><img src="assets/lab-sim.webp" alt="Simulation Lab" loading="lazy"><span class="num">05</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Simulation Lab</h3><p>Competency through simulation</p></div></div>
     </div>
@@ -1821,6 +1844,10 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
     <p style="margin-top:1rem;font-size:.72rem">In collaboration with the Trained Nurses' Association of India, Uttarakhand State Branch</p>
 
     <div class="foot-logos">
+      <figure>
+        <span class="lp"><img src="assets/logo-iafm.webp" alt="Indian Academy of Forensic Medicine" loading="lazy"></span>
+        <figcaption>Parent body</figcaption>
+      </figure>
       <figure>
         <span class="lp"><img src="assets/logo-srhu.webp" alt="Swami Rama Himalayan University" loading="lazy"></span>
         <figcaption>Host institution</figcaption>
