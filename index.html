@@ -919,13 +919,38 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
   radial-gradient(2px 2px at 5% 60%,rgba(246,184,60,.3),transparent),
   var(--ink);
 }
-.connect{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.7rem}
-.connect .card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.connect .ph{border:0;border-radius:0;aspect-ratio:21/8}
-.connect .txt{padding:1.05rem 1.2rem;display:flex;gap:.85rem;align-items:flex-start}
-.connect svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5;flex:0 0 auto;margin-top:.2rem}
-.connect b{display:block;font-size:.86rem;font-weight:600}
-.connect small{display:block;font-size:.78rem;color:var(--mist);line-height:1.5;margin-top:.15rem}
+.connect{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.8rem}
+.connect .card{
+  padding:0;overflow:hidden;display:flex;flex-direction:column;border-radius:16px;
+  transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;
+}
+.connect .card:hover{transform:translateY(-5px);border-color:rgba(246,184,60,.4);box-shadow:0 24px 48px -30px #000}
+.connect .ph{border:0;border-radius:0;aspect-ratio:16/9;position:relative}
+.connect .ph::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 42%,rgba(5,5,6,.82) 100%);opacity:1;
+}
+.connect .txt{padding:1.2rem 1.35rem 1.4rem;display:block}
+.connect .mode{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+.connect .mode span{
+  flex:0 0 auto;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--navy-lite),var(--navy));
+  border:1px solid rgba(246,184,60,.5);
+  transition:background .4s,border-color .4s,box-shadow .4s;
+}
+.connect .card:hover .mode span{background:var(--band);border-color:transparent;box-shadow:0 0 20px -4px rgba(246,184,60,.8)}
+.connect svg{width:20px;height:20px;stroke:var(--gold-pale);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s}
+.connect .card:hover .mode svg{stroke:#0a0a0c}
+.connect b{
+  font-family:var(--display);font-weight:400;font-size:1.18rem;
+  letter-spacing:.015em;color:var(--gold-pale);
+}
+.connect small{display:block;font-size:.87rem;color:var(--mist);line-height:1.68}
+.connect .meta{
+  margin-top:.9rem;padding-top:.85rem;border-top:1px solid var(--hair-2);
+  font-family:var(--data);font-weight:600;font-size:.63rem;letter-spacing:.15em;
+  margin-right:-.15em;text-transform:uppercase;color:var(--gold);
+}
 
 .trip .ph.iconic{
   display:grid;place-items:center;cursor:default;
@@ -1086,7 +1111,6 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
         <div class="pillar"><span class="pico"><img src="assets/i-society.webp" alt="" aria-hidden="true" loading="lazy"></span><i class="node" aria-hidden="true"><b></b></i><span>Society</span></div>
       </div>
       </div>
-    </div>
 
     <div class="theme-line">
       <span class="theme-eyebrow">Conference theme</span>
@@ -1489,21 +1513,12 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
 <section id="travel" class="glitter">
   <div class="shell">
     <div class="band-wrap rise"><div class="band"><h2>Travel Planner</h2></div></div>
-    <p class="lede rise" style="text-align:center;max-width:780px;margin-inline:auto">Dehradun enjoys excellent connectivity with major Indian cities through a well-developed network of air, rail and road transport.</p>
+    <p class="lede rise" style="text-align:center;max-width:780px;margin-inline:auto">Dehradun is well connected by air, rail and road — and the venue sits beside Jolly Grant Airport, so most delegates are on campus within minutes of landing.</p>
 
     <div class="connect rise">
-      <div class="card">
-        <div class="ph"><img src="assets/v-air.webp" alt="Aircraft on approach" loading="lazy"></div>
-        <div class="txt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12l20-7-7 20-3-8-10-5z"/></svg><span><b>By air</b><small>Jolly Grant Airport (DED), about 25 km from the city</small></span></div>
-      </div>
-      <div class="card">
-        <div class="ph"><img src="assets/v-rail.webp" alt="Train arriving at a north Indian station" loading="lazy"></div>
-        <div class="txt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l-2-3M16 21l2-3"/></svg><span><b>By rail</b><small>Dehradun Railway Station, with direct trains from Delhi and beyond</small></span></div>
-      </div>
-      <div class="card">
-        <div class="ph"><img src="assets/v-road.webp" alt="Car on a highway through green country" loading="lazy"></div>
-        <div class="txt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14l1.5-5A3 3 0 0 1 7.4 7h9.2a3 3 0 0 1 2.9 2L21 14v4h-3M3 18v-4M6 18h12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span><b>By road</b><small>About 6 hours from Delhi via NH-7, with frequent buses and taxis</small></span></div>
-      </div>
+      <div class="card"><div class="ph"><img src="assets/v-air.webp" alt="Aircraft on approach" loading="lazy"></div><div class="txt"><div class="mode"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12l20-7-7 20-3-8-10-5z"/></svg></span><b>By air</b></div><small>Jolly Grant Airport (DED) serves Dehradun — and the venue sits right beside it. Direct flights from Delhi, Mumbai, Bengaluru and Lucknow.</small><p class="meta">Minutes from the venue · Delhi in about an hour</p></div></div>
+      <div class="card"><div class="ph"><img src="assets/v-rail.webp" alt="Train arriving at a north Indian station" loading="lazy"></div><div class="txt"><div class="mode"><span aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l-2-3M16 21l2-3"/><circle cx="9" cy="14" r=".8" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r=".8" fill="currentColor" stroke="none"/></svg></span><b>By rail</b></div><small>Dehradun Railway Station (DDN) has daytime and overnight services from Delhi, including the Shatabdi and Nanda Devi Express.</small><p class="meta">About 25 km to the venue</p></div></div>
+      <div class="card"><div class="ph"><img src="assets/v-road.webp" alt="Car on a highway through green country" loading="lazy"></div><div class="txt"><div class="mode"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 14l1.5-5A3 3 0 0 1 7.4 7h9.2a3 3 0 0 1 2.9 2L21 14v4h-3M3 18v-4M6 18h12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><b>By road</b></div><small>Roughly six hours from Delhi on NH-7, with frequent buses from ISBT Kashmere Gate and taxis available throughout.</small><p class="meta">About 235 km from Delhi</p></div></div>
     </div>
 
     <p class="eyebrow rise" style="margin-top:3.2rem;text-align:center">Conference se seekhenge vigyan ki baatein, aur pahadon se seekhenge jeevan ki raahein</p>
@@ -1531,9 +1546,10 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <p class="eyebrow">Half a day</p>
       <span class="glab">Comfortable either side of a session day</span>
       <div class="trip">
+        <div class="card"><button class="ph" data-lb="Mussoorie" data-full="assets/page-mussoorie.webp"><img src="assets/v-mussoorie.webp" alt="The ridge at first light" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Mussoorie</span><span class="km">35 km · Queen of Hills</span><p>The most famous hill station near Dehradun, and the classic half-day escape.</p><ul><li>Mall Road</li><li>Kempty Falls</li><li>Gun Hill viewpoint</li><li>Sunset views and cafés</li></ul></div></div>
+        <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.8 21h18.4"/><path d="M6 21V11.2l6-4.2 6 4.2V21"/><path d="M12 7V3.6M10.3 5h3.4"/><path d="M9.9 21v-4.8a2.1 2.1 0 0 1 4.2 0V21"/></svg></div><div class="body"><span class="tag">Landour</span><span class="km">40 km · above Mussoorie</span><p>A colonial cantonment on the ridge above Mussoorie — quieter and steeper than the town below. Deodar, tin roofs and a walk that loops the hilltop.</p><ul><li>Char Dukan — four cafés at the top of the climb</li><li>Lal Tibba, the highest point</li><li>Sisters Bazaar and Prakash&rsquo;s Store</li><li>Cambridge Book Depot, long associated with Ruskin Bond</li></ul></div></div>
         <div class="card"><div class="ph iconic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 7.5V19M21.5 7.5V19"/><path d="M2.5 7.5c5.2 6.4 15.8 6.4 19 0"/><path d="M2 19h20"/><path d="M6.6 12.6V19M10.3 14.9V19M13.7 14.9V19M17.4 12.6V19"/></svg></div><div class="body"><span class="tag">Rishikesh</span><span class="km">45 km from Dehradun · closer to the venue</span><p>Yoga capital of the world, on the Ganga where it leaves the hills. Jolly Grant sits between the city and Rishikesh, so this is nearer than the city-centre distance suggests.</p><ul><li>Ganga Aarti at Parmarth Niketan</li><li>Ram Jhula and Lakshman Jhula</li><li>The Beatles Ashram</li><li>Rafting at Shivpuri — in season in February</li></ul></div></div>
         <div class="card"><button class="ph" data-lb="Haridwar" data-full="assets/page-haridwar.webp"><img src="assets/v-haridwar.webp" alt="The ghats along the Ganga" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Haridwar</span><span class="km">45 km</span><p>One of the holiest cities in India and a major pilgrimage destination. Lamps go on the water at dusk — arrive an hour early for a place on the steps.</p><ul><li>Ganga Aarti at Har Ki Pauri</li></ul></div></div>
-        <div class="card"><button class="ph" data-lb="Mussoorie" data-full="assets/page-mussoorie.webp"><img src="assets/v-mussoorie.webp" alt="The ridge at first light" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Mussoorie</span><span class="km">35 km · Queen of Hills</span><p>The most famous hill station near Dehradun, and the classic half-day escape.</p><ul><li>Mall Road</li><li>Kempty Falls</li><li>Gun Hill viewpoint</li><li>Sunset views and cafés</li></ul></div></div>
       </div>
     </div>
 
@@ -1547,7 +1563,6 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
         <div class="card"><button class="ph" data-lb="Hidden gems" data-full="assets/page-hidden.webp"><img src="assets/v-maldevta.webp" alt="Riverside at Maldevta" loading="lazy"><span class="shots">View brochure page</span></button><div class="body"><span class="tag">Hidden gems</span><span class="km">Less crowded spots</span><p>Nature and adventure close to the city, without the tourist crush.</p><ul><li>Maldevta — riverside picnic spot</li><li>Lacchiwala Nature Park — forest pools</li><li>Nag Tibba Trek — the Serpent's Peak</li><li>Tehri, Chamba, Kanatal, Pauri</li></ul></div></div>
       </div>
     </div>
-  </div>
   </div>
 </section>
 
