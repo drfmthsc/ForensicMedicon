@@ -529,6 +529,70 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
   letter-spacing:.16em;text-transform:uppercase;color:var(--gold-pale);
 }
 .dagger{color:var(--ember);font-family:var(--data)}
+.policy{
+  margin-top:clamp(2.4rem,5vw,3.4rem);padding-top:clamp(2rem,4vw,2.8rem);
+  border-top:1px solid var(--hair);
+}
+.policy h3{
+  margin:0 0 .6rem;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.4rem,3.4vw,2.1rem);letter-spacing:.015em;color:var(--gold-pale);
+}
+.policy .lede{max-width:60ch;margin-bottom:clamp(1.5rem,3vw,2rem)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-bottom:1.4rem}
+.tier{
+  padding:1.4rem 1.35rem;border-radius:14px;background:var(--ink-3);
+  border:1px solid var(--hair-2);border-top:2px solid rgba(246,184,60,.45);
+  transition:transform .35s var(--ease),border-color .35s;
+}
+.tier:hover{transform:translateY(-4px);border-color:rgba(246,184,60,.5)}
+.tier b{
+  display:block;font-family:var(--display);font-weight:400;line-height:1;
+  font-size:clamp(1.8rem,4.4vw,2.6rem);color:var(--gold-pale);
+}
+.tier small{
+  display:block;margin-top:.5rem;font-family:var(--data);font-weight:600;font-size:.66rem;
+  letter-spacing:.14em;margin-right:-.14em;text-transform:uppercase;color:var(--gold);
+}
+.tier span{display:block;margin-top:.5rem;font-size:.87rem;color:var(--mist)}
+.tier.none b{color:var(--ember)}
+.tier.none{border-top-color:rgba(242,98,43,.5)}
+.tier.none small{color:var(--ember)}
+
+.policy-more{border:1px solid var(--hair-2);border-radius:14px;background:var(--ink-2);overflow:hidden}
+.policy-more summary{
+  cursor:pointer;list-style:none;padding:1.05rem 1.35rem;display:flex;align-items:center;gap:.8rem;
+  font-weight:500;font-size:.95rem;
+}
+.policy-more summary::-webkit-details-marker{display:none}
+.policy-more summary .chev{
+  margin-left:auto;flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--hair);display:grid;place-items:center;font-style:normal;
+  color:var(--gold);font-size:1.05rem;line-height:1;transition:transform .35s var(--ease);
+}
+.policy-more[open] summary .chev{transform:rotate(135deg)}
+.clauses{
+  padding:0 1.35rem 1.5rem;border-top:1px solid var(--hair-2);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2.2rem;
+}
+.policy-more[open] .clauses{animation:fadeUp .45s var(--ease)}
+.clause{padding-top:1.35rem}
+.clause h4{
+  margin:0 0 .55rem;display:flex;align-items:baseline;gap:.6rem;
+  font-family:var(--body);font-weight:600;font-size:.94rem;color:var(--cream);
+}
+.clause h4 i{
+  font-style:normal;font-family:var(--data);font-size:.68rem;font-weight:600;
+  color:var(--gold-deep);letter-spacing:.08em;
+}
+.clause p{margin:0 0 .5rem;font-size:.88rem;color:var(--mist);line-height:1.7}
+.clause ul{margin:0;padding-left:1.05rem;font-size:.88rem;color:var(--mist);line-height:1.7}
+.clause li{margin-bottom:.3rem}
+.clause li::marker{color:var(--gold-deep)}
+.clause a{color:var(--gold)}
+@media(max-width:900px){
+  .tiers{grid-template-columns:1fr}
+  .clauses{grid-template-columns:1fr;gap:0}
+}
 .notes h3 svg,.warn svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .notes h3{display:flex;align-items:center;gap:.55rem}
 .warn{display:flex;gap:.8rem;align-items:flex-start}
@@ -1053,7 +1117,7 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
           <ul class="bul"><li>Entry to all scientific sessions</li><li>Breakfast, lunch and refreshments</li><li>Conference kit</li><li>Conference dinners</li><li>Gala dinner / cultural evening</li><li>Participation certificate</li></ul>
         </div>
         <div class="card"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>Good to know</h3>
-          <ul class="bul"><li><span class="dagger">***</span> The conference kit is not provided for spot registrations, undergraduate students and nursing professionals.</li><li>Registration is free for non-working faculty over 70 years of age.</li><li>Cancellation terms are published on the official conference website.</li></ul>
+          <ul class="bul"><li><span class="dagger">***</span> The conference kit is not provided for spot registrations, undergraduate students and nursing professionals.</li><li>Registration is free for non-working faculty over 70 years of age.</li><li>Cancellation and refund terms are set out below.</li></ul>
         </div>
       </div>
     </div>
@@ -1088,6 +1152,44 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
     </div>
 
     <div class="warn rise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 2.4 17.5A1.9 1.9 0 0 0 4 20.4h16a1.9 1.9 0 0 0 1.6-2.9L13.7 3.9a1.9 1.9 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 17.2v.1"/></svg><span><b>Before you pay:</b> confirm the current fee slab, payment link and cancellation policy with the organising office at <a href="mailto:2027forensicmedicon@gmail.com" style="color:var(--gold)">2027forensicmedicon@gmail.com</a>. Fees shown here follow the official conference brochure.</span></div>
+
+    <div class="policy rise">
+      <p class="eyebrow strong">Official policy</p>
+      <h3>Cancellation &amp; Refund Policy</h3>
+      <p class="lede">Please read this before registering. Refunds depend on the date your written cancellation request reaches the organising office.</p>
+
+      <div class="tiers">
+        <div class="tier">
+          <b>75%</b><small>Refunded</small>
+          <span>Request received on or before <strong>15 Sep 2026</strong> (Early Bird deadline)</span>
+        </div>
+        <div class="tier">
+          <b>50%</b><small>Refunded</small>
+          <span>Request received between <strong>16 Sep and 31 Oct 2026</strong> (Regular deadline)</span>
+        </div>
+        <div class="tier none">
+          <b>0%</b><small>No refund</small>
+          <span>Request received <strong>after 31 Oct 2026</strong></span>
+        </div>
+      </div>
+
+      <details class="policy-more">
+        <summary>Full terms — eight clauses<i class="chev">+</i></summary>
+        <div class="clauses">
+        <div class="clause"><h4><i>01</i>Cancellation request process</h4><p>All cancellation requests must be submitted in writing to <a href="mailto:2027forensicmedicon@gmail.com">2027forensicmedicon@gmail.com</a>. The email must include:</p><ul><li>Full name</li><li>Registration ID (if allotted)</li><li>Category of registration</li><li>Transaction details (UTR / Transaction ID)</li></ul></div>
+        <div class="clause"><h4><i>02</i>Refund slabs</h4><p>Refunds are processed according to the date the cancellation request is received — see the three slabs above.</p></div>
+        <div class="clause"><h4><i>03</i>Processing of refunds</h4><ul><li>Refunds are processed within 15–20 working days after approval</li><li>The amount is credited to the same account or source used for payment</li><li>Bank or transaction charges (e.g. GST) are deducted from the refund amount</li></ul></div>
+        <div class="clause"><h4><i>04</i>Non-transferability</h4><ul><li>Registrations are non-transferable</li><li>Substitution of delegates is not permitted without prior approval from the organising committee</li></ul></div>
+        <div class="clause"><h4><i>05</i>Workshop / skill lab registration</h4><ul><li>Workshop registrations are limited and seat-based</li><li><strong>No refund is provided for workshop fees</strong></li><li>A change of workshop may be considered, subject to availability</li></ul></div>
+        <div class="clause"><h4><i>06</i>Conference cancellation or modification</h4><p>If the conference is postponed or modified due to unforeseen circumstances — natural disasters, government regulations or other force majeure events — the organising committee will communicate revised arrangements. Refund decisions in such cases are at the discretion of the organising committee.</p></div>
+        <div class="clause"><h4><i>07</i>Dispute resolution</h4><p>All disputes are subject to Dehradun jurisdiction.</p></div>
+        <div class="clause"><h4><i>08</i>Acceptance of policy</h4><p>By registering for the conference, the participant agrees to all the terms and conditions set out above.</p></div>
+        </div>
+      </details>
+
+      <p class="lede" style="margin:1.3rem 0 0;font-size:.88rem">Queries: <a href="mailto:2027forensicmedicon@gmail.com" style="color:var(--gold)">2027forensicmedicon@gmail.com</a></p>
+    </div>
+
   </div>
 </section>
 
