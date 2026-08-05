@@ -766,6 +766,19 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
   .tiers{grid-template-columns:1fr}
   .clauses{grid-template-columns:1fr;gap:0}
 }
+.reg-cta{
+  margin-top:clamp(1.6rem,3.4vw,2.2rem);padding:clamp(1.5rem,3.2vw,2.2rem);
+  border:2px solid transparent;border-radius:18px;text-align:center;
+  background:
+    radial-gradient(ellipse 70% 120% at 50% 0%,rgba(246,184,60,.15),transparent 70%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 30%,#E8892B 60%,#FFE9A8) border-box;
+  box-shadow:0 0 66px -28px rgba(246,184,60,.5);
+}
+.reg-cta p{margin:0 0 1.1rem;font-size:.95rem;color:var(--mist)}
+.reg-cta .btn{font-size:1rem;padding:1rem 2.4rem}
+.btn.soon{opacity:.85;cursor:default}
+.btn.soon:hover{transform:none}
 .notes h3 svg,.warn svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .notes h3{display:flex;align-items:center;gap:.55rem}
 .warn{display:flex;gap:.8rem;align-items:flex-start}
@@ -1242,7 +1255,7 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <li><a href="#food">Food</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="#register">Registration fees</a>
+    <a class="nav-cta" data-register data-label="Register now" href="#register">Registration fees</a>
   </div>
 </nav>
 
@@ -1289,7 +1302,8 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-solid" href="#register">See registration fees</a>
+      <a class="btn btn-solid" data-register data-label="Register now" href="#register">Registration opens soon</a>
+      <a class="btn btn-line" href="#register">See registration fees</a>
       <a class="btn btn-line" href="#labs">Explore skill labs</a>
     </div>
 
@@ -1510,6 +1524,11 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
     </div>
 
     <div class="warn rise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 2.4 17.5A1.9 1.9 0 0 0 4 20.4h16a1.9 1.9 0 0 0 1.6-2.9L13.7 3.9a1.9 1.9 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 17.2v.1"/></svg><span><b>Before you pay:</b> confirm the current fee slab, payment link and cancellation policy with the organising office at <a href="mailto:2027forensicmedicon@gmail.com" style="color:var(--gold)">2027forensicmedicon@gmail.com</a>. Fees shown here follow the official conference brochure.</span></div>
+    <div class="reg-cta rise">
+      <p>Places at the skill labs are limited and seat-based. Early Bird rates close on 15 September 2026.</p>
+      <a class="btn btn-solid" data-register data-label="Register now" href="#register">Registration opens soon</a>
+    </div>
+
 
     <div class="policy rise">
       <p class="eyebrow strong">Official policy</p>
@@ -1871,6 +1890,27 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
 (function(){
   "use strict";
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ─────────────────────────────────────────────────────────────
+     REGISTRATION LINK — paste the form / payment URL between the
+     quotes below and every "Register now" button on the page goes
+     live. Leave it empty and the buttons read "Registration opens
+     soon" and simply scroll to the fee tables.
+     ───────────────────────────────────────────────────────────── */
+  var REGISTRATION_URL = '';
+
+  [].slice.call(document.querySelectorAll('[data-register]')).forEach(function(a){
+    if(REGISTRATION_URL){
+      a.href = REGISTRATION_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = a.getAttribute('data-label') || a.textContent;
+      a.classList.remove('soon');
+    } else {
+      a.classList.add('soon');
+      a.setAttribute('title','The registration link will be published shortly');
+    }
+  });
 
   /* mobile menu */
   var burger=document.getElementById('burger'), menu=document.getElementById('menu');
