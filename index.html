@@ -544,6 +544,58 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
 .need .n{font-family:var(--data);font-size:.72rem;color:var(--gold);padding-top:.3rem;flex:0 0 auto}
 .need p{margin:0;font-size:.9rem;color:var(--mist)}
 
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem;margin-top:1.8rem}
+.day{
+  position:relative;padding:1.5rem 1.25rem 1.6rem;border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 72%);
+  border:1px solid var(--hair-2);border-top:2px solid rgba(246,184,60,.45);
+  transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;
+}
+.day:hover{transform:translateY(-5px);border-color:rgba(246,184,60,.5);box-shadow:0 24px 48px -30px #000}
+.day .dow{
+  font-family:var(--data);font-weight:700;font-size:.62rem;letter-spacing:.2em;
+  margin-right:-.2em;text-transform:uppercase;color:var(--gold-deep);
+}
+.day .dnum2{
+  display:block;margin:.35rem 0 .1rem;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1;color:var(--gold-pale);
+}
+.day .mon{
+  display:block;font-family:var(--data);font-weight:600;font-size:.62rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
+}
+.day p{
+  margin:.95rem 0 0;padding-top:.9rem;border-top:1px solid var(--hair-2);
+  font-size:.88rem;line-height:1.6;color:var(--mist);
+}
+.day.wk{border-top-color:var(--gold)}
+.day.wk .dnum2{color:#fff}
+.sched-note{
+  display:flex;gap:1.15rem;align-items:flex-start;
+  margin-top:clamp(1.6rem,3.4vw,2.2rem);
+  padding:clamp(1.3rem,2.8vw,1.8rem) clamp(1.3rem,3vw,2rem);
+  border:2px solid transparent;border-radius:18px;
+  background:
+    radial-gradient(ellipse 70% 100% at 12% 50%,rgba(246,184,60,.14),transparent 68%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 30%,#E8892B 60%,#FFE9A8) border-box;
+  box-shadow:0 0 60px -26px rgba(246,184,60,.45);
+}
+.sched-note svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem}
+.sched-note h4{
+  margin:0 0 .5rem;font-family:var(--data);font-weight:700;font-size:.7rem;
+  letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--gold-pale);
+}
+.sched-note p{margin:0 0 .6rem;font-size:.95rem;line-height:1.7;color:var(--mist)}
+.sched-note p:last-child{margin-bottom:0}
+.sched-note b{color:var(--cream);font-weight:600}
+.sched-note .watch{
+  display:inline-block;margin-top:.3rem;font-family:var(--data);font-weight:700;font-size:.66rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#0a0a0c;background:var(--band);
+  padding:.4rem .9rem;border-radius:999px;
+}
+@media(max-width:900px){ .days{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:520px){ .days{grid-template-columns:1fr} }
 .labs{display:grid;grid-template-columns:repeat(auto-fit,minmax(332px,1fr));gap:1.15rem;margin-top:1.7rem}
 .lab{
   position:relative;display:flex;flex-direction:column;
@@ -1376,6 +1428,20 @@ thead th.now small{color:rgba(255,255,255,.8)}
 .credit{color:var(--gold-pale);animation:none;text-shadow:none}
 .credit span{color:var(--gold-deep)}
 
+
+.day{box-shadow:0 10px 26px -22px rgba(27,23,18,.5)}
+.day:hover{box-shadow:0 22px 44px -28px rgba(27,23,18,.55)}
+.day.wk .dnum2{color:var(--gold-pale)}
+.day .dnum2{color:var(--gold-pale)}
+.sched-note{
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 0%,rgba(168,115,11,.13),transparent 70%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.sched-note .watch{color:#26200F}
+
 /* the seats chips stay navy — they read as the justice chain */
 .seats span{background:#12326d;color:#FFE9A8;border-color:rgba(168,115,11,.5)}
 .seats span:hover{background:#0d2450}
@@ -1396,6 +1462,7 @@ thead th.now small{color:rgba(255,255,255,.8)}
       <li><a href="#about">About</a></li>
       <li><a href="#theme">Theme</a></li>
       <li><a href="#labs">Skill Labs</a></li>
+      <li><a href="#schedule">Schedule</a></li>
       <li><a href="#register">Register</a></li>
       <li><a href="#committee">Committee</a></li>
       <li><a href="#stay">Stay</a></li>
@@ -1599,6 +1666,32 @@ thead th.now small{color:rgba(255,255,255,.8)}
     </div>
   </div>
   </section>
+
+<!-- ══════ SCHEDULE ══════ -->
+<section id="schedule">
+  <div class="shell">
+    <div class="band-wrap rise"><div class="band"><h2>Programme &amp; Schedule</h2></div></div>
+    <p class="lede rise" style="text-align:center;max-width:760px;margin-inline:auto">Five days at Swami Rama Himalayan University — two of hands-on skill labs, followed by three of scientific sessions.</p>
+
+    <div class="days rise">
+      <div class="day wk"><span class="dow">Tue</span><span class="dnum2">2</span><span class="mon">February 2027</span><p>Pre-conference skill labs — day one</p></div>
+      <div class="day wk"><span class="dow">Wed</span><span class="dnum2">3</span><span class="mon">February 2027</span><p>Pre-conference skill labs — day two</p></div>
+      <div class="day "><span class="dow">Thu</span><span class="dnum2">4</span><span class="mon">February 2027</span><p>Scientific sessions</p></div>
+      <div class="day "><span class="dow">Fri</span><span class="dnum2">5</span><span class="mon">February 2027</span><p>Scientific sessions</p></div>
+      <div class="day "><span class="dow">Sat</span><span class="dnum2">6</span><span class="mon">February 2027</span><p>Scientific sessions</p></div>
+    </div>
+
+    <div class="sched-note rise">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.6h18M8 2.8v3.4M16 2.8v3.4"/><path d="M7.6 13.4h2M11 13.4h2M14.4 13.4h2M7.6 17h2M11 17h2"/></svg>
+      <div>
+        <h4>Detailed programme</h4>
+        <p><b>The session-by-session schedule will be shared soon</b> — including the scientific programme, the Justice Chain Forum, the gala dinner and cultural evening, and timings for each skill lab.</p>
+        <p>Abstract submission dates and guidelines will be announced alongside it.</p>
+        <p><span class="watch">Watch this space &amp; the official IAFM WhatsApp group</span></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════ REGISTRATION ══════ -->
 <section id="register" style="background:var(--ink-2)">
@@ -1820,11 +1913,11 @@ thead th.now small{color:rgba(255,255,255,.8)}
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1.8"/><path d="M3 13.5h18M12 9v12"/><path d="M12 9C10 9 8 8.2 8 6.6S9 4 10.1 4 12 6.2 12 9zM12 9c2 0 4-.8 4-2.4S15 4 13.9 4 12 6.2 12 9z"/></svg></span><h4>Souvenir</h4><p>Dr Shalli Vyas<br>Dr Vidisha Ballabh<br>Dr Sanjoy Das</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 19v-9"/><path d="M3 14h13.5a4.5 4.5 0 0 1 4.5 4.5V19"/><circle cx="7" cy="10.5" r="2.1"/><path d="M2 21h20"/></svg></span><h4>Accommodation</h4><p>Mr Amrendra Kumar<br>Dr Aqueel Haider</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4.2a5.4 5.4 0 0 0-5.4 5.4c0 4.2-1.6 5.8-2.2 6.4h15.2c-.6-.6-2.2-2.2-2.2-6.4A5.4 5.4 0 0 0 12 4.2z"/><path d="M10 18.3a2.2 2.2 0 0 0 4 0"/><path d="M12 4.2V2.4"/><circle cx="12" cy="2" r=".9"/></svg></span><h4>Decoration &amp; Fund-raising</h4><p>Dr Shikhar Agarwal<br>Dr Abha Srivastava</p></div>
-      <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 11v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-5"/></svg></span><h4>Finance</h4><p>Dr Harvinder Singh<br>Dr Shubhashree</p></div>
+      <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 11v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-5"/></svg></span><h4>Finance</h4><p>Dr Harvinder Singh Chhabra<br>Dr Shubhashree</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="14" height="9.5" rx="2.2"/><path d="M16 12.2 21.5 9v9.5L16 15.3z"/><circle cx="8" cy="12.7" r="2.6"/></svg></span><h4>Audio-Visual &amp; I.T.</h4><p>Mr Pramod Kothari<br>Mr Mukul Rajput</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6.2l10-2.2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span><h4>Cultural &amp; Social</h4><p>Dr Jyoti Diwedi<br>Dr D. S. Gaur<br>Dr Rajesh Sharma</p></div>
       <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11v2.2a1 1 0 0 0 1 1h2.3l7.7 3.9V6.1L6.3 10H4a1 1 0 0 0-1 1z"/><path d="M17.8 9.2a4.2 4.2 0 0 1 0 5.8"/><path d="M6.5 15v3.6a1 1 0 0 0 1 1h1.2a1 1 0 0 0 1-1v-2.7"/></svg></span><h4>Media &amp; Publicity</h4><p>Dr Deep Shikha<br>Dr Neha Sharma</p></div>
-      <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14v-2.2a8 8 0 0 1 16 0V14"/><path d="M4.2 13.6A2.2 2.2 0 0 1 6.4 16v2a2.2 2.2 0 0 1-4.4 0v-2a2.2 2.2 0 0 1 2.2-2.4zM19.8 13.6A2.2 2.2 0 0 0 17.6 16v2a2.2 2.2 0 0 0 4.4 0v-2a2.2 2.2 0 0 0-2.2-2.4z"/><path d="M17.6 19.6v.4a2.4 2.4 0 0 1-2.4 2.4h-2.4"/></svg></span><h4>Delegate Assistance</h4><p>Dr Harvinder Singh<br>Dept. of Forensic Medicine &amp; Toxicology<br><a href="tel:+919814904440" style="color:var(--gold);font-family:var(--data);font-size:.78rem;text-decoration:none">9814904440</a></p></div>
+      <div class="sub-card"><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14v-2.2a8 8 0 0 1 16 0V14"/><path d="M4.2 13.6A2.2 2.2 0 0 1 6.4 16v2a2.2 2.2 0 0 1-4.4 0v-2a2.2 2.2 0 0 1 2.2-2.4zM19.8 13.6A2.2 2.2 0 0 0 17.6 16v2a2.2 2.2 0 0 0 4.4 0v-2a2.2 2.2 0 0 0-2.2-2.4z"/><path d="M17.6 19.6v.4a2.4 2.4 0 0 1-2.4 2.4h-2.4"/></svg></span><h4>Delegate Assistance</h4><p>Dr Harvinder Singh Chhabra<br>Dept. of Forensic Medicine &amp; Toxicology<br><a href="tel:+919814904440" style="color:var(--gold);font-family:var(--data);font-size:.78rem;text-decoration:none">9814904440</a></p></div>
     </div>
   </div>
 </section>
@@ -2025,7 +2118,7 @@ thead th.now small{color:rgba(255,255,255,.8)}
       </figure>
     </div>
 
-    <p class="credit"><span>Designed by</span> Dr Harvinder Singh Chhabra</p>
+    <p class="credit"><span>Designed by</span> Dr Sanjoy Das &amp; Dr Harvinder Singh Chhabra</p>
   </div>
 </footer>
 
