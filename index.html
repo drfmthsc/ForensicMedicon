@@ -1147,6 +1147,18 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
 .contact-lines a{color:var(--gold);text-decoration:none;font-family:var(--data);font-size:.94rem}
 .contact-lines a:hover{text-decoration:underline}
 
+.credit{
+  margin:1.9rem 0 0;padding-top:1.7rem;border-top:1px solid var(--hair-2);
+  font-family:var(--data);font-weight:700;font-size:.74rem;
+  letter-spacing:.22em;margin-right:-.22em;text-transform:uppercase;
+  color:var(--gold-pale);
+  animation:creditGlow 4.6s ease-in-out infinite;
+}
+@keyframes creditGlow{
+  0%,100%{text-shadow:0 0 12px rgba(246,184,60,.45)}
+  50%    {text-shadow:0 0 24px rgba(246,184,60,.9),0 0 46px rgba(246,184,60,.35)}
+}
+.credit span{color:var(--gold);font-weight:600}
 .foot-logos{
   display:flex;justify-content:center;align-items:center;flex-wrap:wrap;
   gap:clamp(.9rem,3vw,2rem);margin-top:1.8rem;padding-top:1.8rem;
@@ -1359,6 +1371,10 @@ thead th.now small{color:rgba(255,255,255,.8)}
 .km-pill{background:#fff}
 .sg-count{background:#fff}
 .definition{border-left-color:var(--gold)}
+
+
+.credit{color:var(--gold-pale);animation:none;text-shadow:none}
+.credit span{color:var(--gold-deep)}
 
 /* the seats chips stay navy — they read as the justice chain */
 .seats span{background:#12326d;color:#FFE9A8;border-color:rgba(168,115,11,.5)}
@@ -2008,6 +2024,8 @@ thead th.now small{color:rgba(255,255,255,.8)}
         <figcaption>In collaboration</figcaption>
       </figure>
     </div>
+
+    <p class="credit"><span>Designed by</span> Dr Harvinder Singh Chhabra</p>
   </div>
 </footer>
 
