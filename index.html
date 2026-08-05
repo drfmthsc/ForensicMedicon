@@ -238,13 +238,34 @@ ul.bul li::marker{color:var(--gold)}
 .pillar{display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;opacity:0;transform:translateY(14px)}
 .pillar.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s var(--ease)}
 
-.pico{display:flex;align-items:flex-end;justify-content:center}
+.pico{position:relative;display:flex;align-items:flex-end;justify-content:center}
+.pico::before{
+  content:"";position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+  width:clamp(66px,11vw,104px);height:clamp(66px,11vw,104px);
+  border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(246,184,60,.4) 0%,rgba(246,184,60,.14) 45%,transparent 70%);
+  filter:blur(5px);opacity:.85;
+  animation:pillarGlow 5.2s ease-in-out infinite;
+}
+@keyframes pillarGlow{
+  0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(.9)}
+  50%    {opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+}
+.pillar:nth-child(2) .pico::before{animation-delay:.8s}
+.pillar:nth-child(3) .pico::before{animation-delay:1.6s}
+.pillar:nth-child(4) .pico::before{animation-delay:2.4s}
+.pillar:nth-child(5) .pico::before{animation-delay:3.2s}
+.pillar:nth-child(6) .pico::before{animation-delay:4s}
 .pillar img{
-  height:clamp(44px,8vw,74px);width:auto;
-  filter:drop-shadow(0 0 12px rgba(246,184,60,.18));
+  position:relative;height:clamp(44px,8vw,74px);width:auto;
+  filter:drop-shadow(0 0 14px rgba(246,184,60,.5)) drop-shadow(0 0 34px rgba(246,184,60,.22));
   transition:transform .4s var(--ease),filter .4s;
 }
-.pillar:hover img{transform:translateY(-5px) scale(1.07);filter:brightness(1.3) drop-shadow(0 0 16px rgba(246,184,60,.6))}
+.pillar:hover img{
+  transform:translateY(-5px) scale(1.07);
+  filter:brightness(1.25) drop-shadow(0 0 20px rgba(246,184,60,.85)) drop-shadow(0 0 46px rgba(246,184,60,.4));
+}
+.pillar:hover .pico::before{opacity:1}
 
 /* the chain itself: a continuous thread with a link at every pillar */
 .node{display:flex;align-items:center;width:100%;margin:clamp(.7rem,1.6vw,1rem) 0 clamp(.6rem,1.4vw,.85rem)}
@@ -269,9 +290,10 @@ ul.bul li::marker{color:var(--gold)}
 .pillar span{
   font-family:var(--data);font-weight:700;font-size:clamp(.46rem,1.35vw,.66rem);
   letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--gold);
-  transition:color .35s;
+  text-shadow:0 0 14px rgba(246,184,60,.55);
+  transition:color .35s,text-shadow .35s;
 }
-.pillar:hover span{color:var(--gold-pale)}
+.pillar:hover span{color:var(--gold-pale);text-shadow:0 0 20px rgba(246,184,60,.9)}
 
 .theme-line{
   margin:clamp(1.7rem,3.6vw,2.5rem) auto 0;max-width:900px;position:relative;
