@@ -387,6 +387,68 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
 /* ═══════════ CONTENT ═══════════ */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3vw,2.5rem)}
 
+.flagship{
+  position:relative;margin-top:clamp(2.6rem,5.5vw,3.8rem);
+  padding:clamp(2.4rem,5vw,3.4rem) clamp(1.4rem,4vw,3rem) clamp(2rem,4.5vw,3rem);
+  border:2px solid transparent;border-radius:22px;isolation:isolate;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 0%,rgba(246,184,60,.14),transparent 70%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2) 70%) padding-box,
+    linear-gradient(120deg,#FFE9A8 0%,#F6B83C 24%,#E8892B 48%,#FFF3CC 62%,#F6B83C 80%,#E8892B 100%) border-box;
+  box-shadow:0 0 90px -34px rgba(246,184,60,.5),0 32px 70px -40px #000;
+  text-align:center;
+}
+.flagship::before{
+  content:"";position:absolute;inset:-60% -20%;z-index:-1;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent,rgba(246,184,60,.075),transparent 38%);
+  animation:spin 22s linear infinite;
+}
+.ribbon{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  background:var(--band);color:#0a0a0c;
+  font-family:var(--data);font-weight:700;font-size:.63rem;letter-spacing:.24em;
+  text-transform:uppercase;padding:.42rem 1.5rem;border-radius:0 0 12px 12px;
+}
+.flag-title{
+  margin:0 0 .8rem;font-family:var(--display);font-weight:400;line-height:1.03;
+  font-size:clamp(1.85rem,5.6vw,3.4rem);letter-spacing:.015em;color:var(--gold-pale);
+  text-shadow:0 0 44px rgba(246,184,60,.4);
+}
+.flag-lede{
+  margin:0 auto;max-width:56ch;font-size:clamp(1rem,2.1vw,1.22rem);
+  line-height:1.62;font-weight:300;color:var(--cream);
+}
+.flag-split{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,3.4vw,2.8rem);
+  margin:clamp(1.9rem,4vw,2.6rem) auto 0;max-width:840px;text-align:left;
+}
+.flag-split > div{padding-top:1.15rem;border-top:2px solid rgba(246,184,60,.4)}
+.flag-split h4{
+  margin:0 0 .7rem;font-family:var(--data);font-weight:700;font-size:.66rem;
+  letter-spacing:.19em;margin-right:-.19em;text-transform:uppercase;color:var(--gold);
+}
+.flag-split p{margin:0;font-size:.93rem;line-height:1.75;color:var(--mist)}
+.flag-split ul{margin:0;padding-left:1.05rem;font-size:.93rem;line-height:1.75;color:var(--mist)}
+.flag-split li::marker{color:var(--gold-deep)}
+.flag-split strong{color:var(--gold-pale);font-weight:600}
+
+.seats{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:.5rem .55rem;margin-top:1.1rem;
+}
+.seats span{
+  font-family:var(--data);font-weight:600;font-size:clamp(.6rem,1.4vw,.72rem);
+  letter-spacing:.13em;margin-right:-.13em;text-transform:uppercase;
+  color:var(--gold-pale);background:rgba(12,44,99,.5);
+  border:1px solid rgba(246,184,60,.32);border-radius:999px;padding:.58rem 1.1rem;
+  transition:transform .3s var(--ease),border-color .3s,background .3s;
+}
+.seats span:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(12,44,99,.85)}
+.seats i{
+  flex:0 0 auto;width:8px;height:8px;border-radius:2px;background:var(--gold);
+  transform:rotate(45deg);box-shadow:0 0 10px rgba(246,184,60,.6);
+}
+@media(max-width:760px){ .flag-split{grid-template-columns:1fr;gap:1.5rem} .seats i{display:none} }
 .claim{
   margin:clamp(1.6rem,3.4vw,2.3rem) auto .9rem;max-width:22ch;
   font-family:var(--display);font-weight:400;line-height:1.08;
@@ -1122,12 +1184,29 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
       <li class="aim"><span class="n">05</span><h4>Public trust</h4><p>Build public confidence in forensics as a tool for justice.</p></li>
     </ul>
 
-    <div class="card rise" style="margin-top:2rem">
-      <p class="eyebrow">Flagship session</p>
-      <h3 style="margin:0 0 .6rem;font-size:1.32rem;color:var(--gold-pale)">The Justice Chain Forum</h3>
-      <p class="lede">An interdisciplinary dialogue bringing together representatives from every institution involved in justice delivery. The forum focuses on identifying systemic gaps, practical challenges and opportunities for improving coordination across the justice chain — and aims to produce practical recommendations for strengthening the role of Forensic Medicine in the justice system.</p>
-      <div class="names" style="margin-top:1rem">
-        <span class="name">Police investigators</span><span class="name">Forensic medicine experts</span><span class="name">Forensic scientists</span><span class="name">Nurses</span><span class="name">Public prosecutors</span><span class="name">Judicial officers</span><span class="name">Legal scholars</span>
+    <div class="flagship rise">
+      <span class="ribbon">Flagship session</span>
+      <h3 class="flag-title">The Justice Chain Forum</h3>
+      <p class="flag-lede">An interdisciplinary dialogue bringing every institution involved in justice delivery into the same room — for once, at the same table.</p>
+
+      <div class="flag-split">
+        <div>
+          <h4>What it examines</h4>
+          <ul>
+            <li>Systemic gaps between institutions</li>
+            <li>Practical challenges in day-to-day casework</li>
+            <li>Opportunities to improve coordination across the chain</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What it produces</h4>
+          <p>Not a panel discussion that ends when the session does. The forum sets out to deliver <strong>practical recommendations</strong> for strengthening the role of Forensic Medicine within the justice system.</p>
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin:clamp(1.9rem,4vw,2.6rem) 0 0;text-align:center">Around the table</p>
+      <div class="seats">
+        <span>Police investigators</span><i aria-hidden="true"></i><span>Forensic medicine experts</span><i aria-hidden="true"></i><span>Forensic scientists</span><i aria-hidden="true"></i><span>Nurses</span><i aria-hidden="true"></i><span>Public prosecutors</span><i aria-hidden="true"></i><span>Judicial officers</span><i aria-hidden="true"></i><span>Legal scholars</span>
       </div>
     </div>
   </div>
