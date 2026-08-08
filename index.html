@@ -984,6 +984,50 @@ tbody tr:hover td.now{background:rgba(246,184,60,.15)}
   .tiers{grid-template-columns:1fr}
   .clauses{grid-template-columns:1fr;gap:0}
 }
+.tnai-chip{
+  display:inline-block;margin-left:.5rem;padding:.22rem .6rem;border-radius:999px;
+  background:var(--band);color:#0a0a0c;
+  font-family:var(--data);font-weight:700;font-size:.55rem;letter-spacing:.09em;
+  text-transform:uppercase;white-space:nowrap;vertical-align:.12em;
+}
+tbody tr.nursing th{box-shadow:inset 3px 0 0 var(--gold)}
+
+.tnai{
+  display:flex;gap:1.2rem;align-items:center;
+  margin-top:1.2rem;padding:clamp(1.2rem,2.8vw,1.7rem) clamp(1.2rem,3vw,1.9rem);
+  border:2px solid transparent;border-radius:18px;
+  background:
+    radial-gradient(ellipse 70% 130% at 10% 50%,rgba(246,184,60,.2),transparent 66%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 28%,#E8892B 58%,#FFE9A8) border-box;
+  animation:tnaiGlow 3.6s ease-in-out infinite;
+}
+@keyframes tnaiGlow{
+  0%,100%{box-shadow:0 0 44px -22px rgba(246,184,60,.7)}
+  50%    {box-shadow:0 0 78px -16px rgba(246,184,60,1)}
+}
+.tnai-amt{
+  flex:0 0 auto;display:grid;place-items:center;text-align:center;
+  width:clamp(88px,12vw,112px);height:clamp(88px,12vw,112px);border-radius:50%;
+  background:var(--band);color:#0a0a0c;
+  box-shadow:0 0 34px -8px rgba(246,184,60,.9);
+}
+.tnai-amt b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1}
+.tnai-amt span{display:block;font-family:var(--data);font-weight:700;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.15rem}
+.tnai h4{
+  margin:0 0 .45rem;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.05rem,2.5vw,1.45rem);letter-spacing:.015em;color:var(--gold-pale);
+}
+.tnai p{margin:0 0 .5rem;font-size:.92rem;line-height:1.65;color:var(--mist)}
+.tnai p:last-child{margin-bottom:0}
+.tnai b{color:var(--cream);font-weight:600}
+.tnai .must{
+  display:inline-block;margin-top:.35rem;padding:.4rem .9rem;border-radius:999px;
+  background:rgba(242,98,43,.14);border:1px solid rgba(242,98,43,.5);
+  font-family:var(--data);font-weight:700;font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ember);
+}
+@media(max-width:620px){ .tnai{flex-direction:column;align-items:flex-start;text-align:left} }
 .reg-cta{
   margin-top:clamp(1.6rem,3.4vw,2.2rem);padding:clamp(1.5rem,3.2vw,2.2rem);
   border:2px solid transparent;border-radius:18px;text-align:center;
@@ -1777,6 +1821,21 @@ thead th.now small{color:rgba(255,255,255,.8)}
 .adv .desig{color:#26200F}
 .adv.office{background:#fff;border-color:rgba(168,115,11,.5)}
 
+
+.tnai{
+  background:
+    radial-gradient(ellipse 70% 130% at 10% 50%,rgba(168,115,11,.16),transparent 66%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 28%,#B8710C 58%,#E8B94A) border-box;
+}
+@keyframes tnaiGlow{
+  0%,100%{box-shadow:0 12px 34px -22px rgba(27,23,18,.5)}
+  50%    {box-shadow:0 16px 46px -20px rgba(168,115,11,.65)}
+}
+.tnai-amt{color:#26200F}
+.tnai .must{background:rgba(199,64,26,.1);border-color:rgba(199,64,26,.45);color:var(--ember)}
+.tnai-chip{color:#26200F}
+
 /* the seats chips stay navy — they read as the justice chain */
 
 
@@ -2162,9 +2221,18 @@ thead th.now small{color:rgba(255,255,255,.8)}
             <tr><th>Non-IAFM Member (PG Trainees)</th><td data-label="Early Bird"><i>₹</i>5,500</td><td data-label="Regular"><i>₹</i>6,500</td><td data-label="Late"><i>₹</i>7,500</td><td data-label="Spot"><i>₹</i>8,500</td></tr>
             <tr><th>Undergraduate Students <span class="dagger">***</span></th><td data-label="Early Bird"><i>₹</i>2,000</td><td data-label="Regular"><i>₹</i>3,000</td><td data-label="Late"><i>₹</i>4,000</td><td data-label="Spot"><i>₹</i>5,000</td></tr>
             <tr><th>Overseas Delegates</th><td data-label="Early Bird">$550</td><td data-label="Regular">$600</td><td data-label="Late">$650</td><td data-label="Spot">$680</td></tr>
-            <tr><th>Nursing Professionals <span class="dagger">***</span></th><td data-label="Early Bird"><i>₹</i>1,000</td><td data-label="Regular"><i>₹</i>1,100</td><td data-label="Late"><i>₹</i>1,200</td><td data-label="Spot"><i>₹</i>1,500</td></tr>
+            <tr class="nursing"><th>Nursing Professionals <span class="dagger">***</span><span class="tnai-chip">−₹200 TNAI / SNAI</span></th><td data-label="Early Bird"><i>₹</i>1,200</td><td data-label="Regular"><i>₹</i>1,300</td><td data-label="Late"><i>₹</i>1,400</td><td data-label="Spot"><i>₹</i>1,700</td></tr>
           </tbody>
         </table>
+      </div>
+      <div class="tnai">
+        <span class="tnai-amt"><b>&minus;&#8377;200</b><span>Nursing</span></span>
+        <div>
+          <h4>&#8377;200 off for TNAI &amp; SNAI members</h4>
+          <p>Members of the <b>Trained Nurses' Association of India</b> and the <b>Student Nurses' Association of India</b> get <b>&#8377;200 off every nursing slab</b> — Early Bird to Spot.</p>
+          <p><span class="must">Membership number required at registration</span></p>
+          <p style="font-size:.85rem;margin-top:.5rem">The discount is applied only against a valid TNAI or SNAI membership number. Registrations without one are charged the full nursing rate.</p>
+        </div>
       </div>
       <div class="notes">
         <div class="card"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Conference registration includes</h3>

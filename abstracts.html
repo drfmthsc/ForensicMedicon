@@ -195,8 +195,6 @@ td.n{color:var(--faint)}
 .btn{display:inline-block;padding:1rem 2.4rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s}
 .btn-solid{background:var(--band);color:#080808;box-shadow:0 10px 30px -14px rgba(242,98,43,.95)}
 .btn:hover{transform:translateY(-3px)}
-.btn.soon{opacity:.85;cursor:default}
-.btn.soon:hover{transform:none}
 .cta p{margin-top:.9rem;font-size:.85rem;color:var(--faint)}
 
 footer{border-top:1px solid var(--hair-2);padding:2.4rem 0;text-align:center}
@@ -402,6 +400,21 @@ thead th.now small{color:rgba(255,255,255,.8)}
 
 .adv .desig{color:#26200F}
 .adv.office{background:#fff;border-color:rgba(168,115,11,.5)}
+
+
+.tnai{
+  background:
+    radial-gradient(ellipse 70% 130% at 10% 50%,rgba(168,115,11,.16),transparent 66%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 28%,#B8710C 58%,#E8B94A) border-box;
+}
+@keyframes tnaiGlow{
+  0%,100%{box-shadow:0 12px 34px -22px rgba(27,23,18,.5)}
+  50%    {box-shadow:0 16px 46px -20px rgba(168,115,11,.65)}
+}
+.tnai-amt{color:#26200F}
+.tnai .must{background:rgba(199,64,26,.1);border-color:rgba(199,64,26,.45);color:var(--ember)}
+.tnai-chip{color:#26200F}
 
 /* the seats chips stay navy — they read as the justice chain */
 
@@ -683,8 +696,8 @@ thead th.now small{color:rgba(255,255,255,.8)}
     </div>
 
     <div class="cta">
-      <a class="btn btn-solid" data-abstract data-label="Submit an abstract" href="index.html#register">Submission link is sent by email</a>
-      <p>The link is emailed to you with your registration ID once registration is complete.</p>
+      <a class="btn btn-solid" href="index.html#register">Register to receive the submission link</a>
+      <p>Submission is by invitation only. The Google Form link is emailed to you, together with your registration ID, once your registration is complete — the ID is a required field on the form.</p>
     </div>
   </div>
 </section>
@@ -697,28 +710,6 @@ thead th.now small{color:rgba(255,255,255,.8)}
   </div>
 </footer>
 
-<script>
-(function(){
-  "use strict";
-  /* ─────────────────────────────────────────────────────────────
-     ABSTRACT FORM URL — paste the Google Form link between the
-     quotes below. Every "Submit an abstract" button then goes live.
-     Leave it empty and the button explains that the link is emailed.
-     ───────────────────────────────────────────────────────────── */
-  var ABSTRACT_FORM_URL = '';
 
-  [].slice.call(document.querySelectorAll('[data-abstract]')).forEach(function(a){
-    if(ABSTRACT_FORM_URL){
-      a.href = ABSTRACT_FORM_URL;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.textContent = a.getAttribute('data-label') || a.textContent;
-      a.classList.remove('soon');
-    } else {
-      a.classList.add('soon');
-    }
-  });
-})();
-</script>
 </body>
 </html>
