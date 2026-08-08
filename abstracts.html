@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light theme — Abstract Submission — FORENSIC MEDICON 2027</title>
+<meta name="description" content="Abstract and e-poster submission guidelines for FORENSIC MEDICON 2027, the 48th Annual Conference of the Indian Academy of Forensic Medicine. Submission closes 15 December 2026.">
+<meta property="og:title" content="Abstract Submission — FORENSIC MEDICON 2027">
+<meta property="og:description" content="Free paper and e-poster submission guidelines. Abstracts close 15 December 2026.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://drfmthsc.github.io/ForensicMedicon/assets/og-image.jpg">
+<meta property="og:url" content="https://drfmthsc.github.io/ForensicMedicon/abstracts.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#050506; --ink-2:#0c0c0e; --ink-3:#131316; --ink-4:#1b1b1f;
+  --gold-pale:#FFE9A8; --gold:#F6B83C; --gold-deep:#E8892B; --ember:#F2622B;
+  --navy:#0C2C63; --navy-lite:#1a4a9e;
+  --cream:#FFF7E6; --mist:rgba(255,247,230,.62); --faint:rgba(255,247,230,.4);
+  --hair:rgba(246,184,60,.2); --hair-2:rgba(246,184,60,.1);
+  --band:linear-gradient(90deg,#FFE9A8 0%,#F6B83C 40%,#E8892B 72%,#F2622B 100%);
+  --shell:min(980px,calc(100% - 2.5rem));
+  --display:'Anton',Impact,sans-serif; --body:'Poppins',system-ui,sans-serif;
+  --data:'Poppins',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--body);font-weight:300;line-height:1.72;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+::selection{background:rgba(246,184,60,.32);color:var(--cream)}
+.shell{width:var(--shell);margin-inline:auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(5,5,6,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair)}
+.nav-in{width:var(--shell);margin-inline:auto;display:flex;align-items:center;gap:1rem;height:76px}
+.mark{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:1.05rem;letter-spacing:.05em;text-decoration:none;color:var(--cream);white-space:nowrap}
+.mark img{height:36px;width:auto}
+.mark span{color:var(--gold)}
+.back{margin-left:auto;font-family:var(--data);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--hair);border-radius:999px;padding:.55rem 1.1rem;transition:.25s;white-space:nowrap}
+.back:hover{background:rgba(246,184,60,.12);border-color:var(--gold)}
+
+/* header */
+header{padding:clamp(2.6rem,6vw,4.2rem) 0 clamp(1.6rem,3vw,2.2rem);text-align:center;position:relative;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(246,184,60,.13),transparent 70%);pointer-events:none}
+.eyebrow{position:relative;font-family:var(--data);font-weight:600;font-size:.64rem;letter-spacing:.36em;margin:0 -.36em .9rem 0;text-transform:uppercase;color:var(--gold)}
+h1{position:relative;margin:0 0 .8rem;font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,6vw,3.4rem);line-height:1.05;letter-spacing:.015em;color:var(--gold-pale);text-shadow:0 0 40px rgba(246,184,60,.35)}
+.sub{position:relative;margin:0 auto;max-width:56ch;font-size:clamp(.98rem,2vw,1.16rem);color:var(--mist)}
+
+section{padding-block:clamp(2rem,4vw,3rem)}
+h2{margin:0 0 1.1rem;font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,3.2vw,1.9rem);letter-spacing:.015em;color:var(--gold-pale)}
+h3{margin:1.6rem 0 .7rem;font-family:var(--data);font-weight:700;font-size:.7rem;letter-spacing:.18em;margin-right:-.18em;text-transform:uppercase;color:var(--gold)}
+p{margin:0 0 1rem;color:var(--mist)}
+strong{color:var(--cream);font-weight:600}
+ul,ol{margin:0 0 1rem;padding-left:1.2rem;color:var(--mist)}
+li{margin-bottom:.45rem}
+li::marker{color:var(--gold-deep)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--hair),transparent);margin:clamp(2rem,4vw,3rem) 0}
+
+/* the standout notice */
+.notice{
+  display:flex;gap:1.15rem;align-items:flex-start;
+  padding:clamp(1.4rem,3vw,1.9rem) clamp(1.3rem,3vw,2rem);
+  border:2px solid transparent;border-radius:18px;
+  background:
+    radial-gradient(ellipse 70% 110% at 12% 50%,rgba(246,184,60,.16),transparent 68%) padding-box,
+    linear-gradient(168deg,var(--ink-3),var(--ink-2)) padding-box,
+    linear-gradient(120deg,#FFE9A8,#F6B83C 30%,#E8892B 60%,#FFE9A8) border-box;
+  box-shadow:0 0 66px -26px rgba(246,184,60,.55);
+  animation:noticeGlow 5s ease-in-out infinite;
+}
+@keyframes noticeGlow{
+  0%,100%{box-shadow:0 0 60px -28px rgba(246,184,60,.5)}
+  50%    {box-shadow:0 0 84px -22px rgba(246,184,60,.75)}
+}
+.notice svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem}
+.notice h4{margin:0 0 .55rem;font-family:var(--data);font-weight:700;font-size:.7rem;letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--gold-pale)}
+.notice p{margin:0 0 .55rem;font-size:.97rem;line-height:1.72}
+.notice p:last-child{margin-bottom:0}
+.notice b{color:var(--cream);font-weight:600}
+
+/* deadline warning */
+.hard{
+  margin-top:1.1rem;padding:1.1rem 1.3rem;border-radius:12px;
+  border:1px solid rgba(242,98,43,.45);background:rgba(242,98,43,.07);
+  display:flex;gap:.85rem;align-items:flex-start;
+}
+.hard svg{width:20px;height:20px;stroke:var(--ember);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem}
+.hard p{margin:0;font-size:.92rem;color:var(--mist)}
+.hard b{color:var(--ember)}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--hair);border-radius:14px;margin-bottom:1.2rem}
+table{width:100%;border-collapse:collapse;min-width:560px;background:var(--ink-2)}
+th,td{padding:.9rem 1rem;text-align:left;border-bottom:1px solid var(--hair-2);font-size:.9rem}
+thead th{background:rgba(12,44,99,.55);color:var(--gold-pale);font-weight:600;font-size:.8rem;border-bottom:1px solid var(--hair);white-space:nowrap}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:#101014}
+tbody th{font-weight:500;color:var(--cream)}
+td.y{color:var(--gold-pale);font-weight:600}
+td.n{color:var(--faint)}
+
+/* spec cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1rem;margin-bottom:1.2rem}
+.card{
+  padding:1.4rem 1.35rem 1.5rem;border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 72%);
+  border:1px solid var(--hair-2);
+}
+.card h4{margin:0 0 .8rem;padding-bottom:.7rem;border-bottom:1px solid var(--hair-2);font-family:var(--data);font-weight:700;font-size:.66rem;letter-spacing:.18em;margin-right:-.18em;text-transform:uppercase;color:var(--gold)}
+.card p,.card ul{font-size:.89rem;margin-bottom:.6rem}
+.card ul{padding-left:1.05rem}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+
+/* e-poster diagram */
+.poster-spec{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.2rem,3vw,2.2rem);align-items:center}
+.canvas{
+  position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
+  background:linear-gradient(160deg,#12326d,#08183a);border:2px solid var(--gold);
+  padding:5% 5.5%;display:flex;flex-direction:column;
+}
+.canvas .t{font-family:var(--body);font-weight:700;font-size:clamp(.62rem,1.5vw,.86rem);color:#fff;line-height:1.15}
+.canvas .a{font-size:clamp(.42rem,1vw,.56rem);color:var(--gold-pale);margin-top:.25rem}
+.canvas .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4%;margin-top:5%;flex:1}
+.canvas .col{display:flex;flex-direction:column;gap:5%}
+.canvas .h{height:5%;min-height:5px;background:var(--gold);border-radius:2px;width:70%}
+.canvas .l{height:3%;min-height:3px;background:rgba(255,247,230,.32);border-radius:2px}
+.canvas .l.s{width:72%}
+.canvas .fig{flex:1;background:rgba(255,247,230,.14);border-radius:4px;border:1px solid rgba(246,184,60,.4)}
+.canvas .zoombox{
+  position:absolute;left:4.5%;top:26%;width:30%;height:60%;
+  border:2px dashed var(--gold);border-radius:4px;
+  background:rgba(246,184,60,.09);display:grid;place-items:center;
+}
+.canvas .zoombox span{
+  font-family:var(--data);font-weight:700;font-size:clamp(.42rem,1vw,.56rem);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold-pale);
+}
+.canvas .dim{position:absolute;right:.5rem;bottom:.4rem;font-family:var(--data);font-weight:600;font-size:.5rem;letter-spacing:.12em;color:rgba(255,247,230,.45)}
+@media(max-width:760px){ .poster-spec{grid-template-columns:1fr} }
+
+/* type scale table */
+.sizes{display:grid;gap:.5rem}
+.size-row{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;padding:.6rem .9rem;background:var(--ink-2);border:1px solid var(--hair-2);border-radius:10px}
+.size-row b{font-weight:500;font-size:.88rem;color:var(--cream)}
+.size-row span{font-family:var(--data);font-weight:700;font-size:.82rem;color:var(--gold)}
+
+/* dates */
+.dates{display:grid;gap:.6rem}
+.date-row{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:center;padding:.9rem 1.1rem;background:var(--ink-2);border:1px solid var(--hair-2);border-left:3px solid var(--gold);border-radius:12px}
+.date-row b{font-family:var(--data);font-weight:700;font-size:.72rem;letter-spacing:.1em;color:var(--gold-pale);white-space:nowrap}
+.date-row span{font-size:.9rem;color:var(--mist)}
+.date-row.open{border-left-color:#3FBF6A}
+.date-row.open b{color:#7BE2A0}
+
+.tpl{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.3rem}
+.tpl a{
+  display:block;text-decoration:none;padding:1.3rem 1.35rem;border-radius:16px;
+  background:linear-gradient(168deg,var(--ink-3),var(--ink-2) 72%);
+  border:1px solid var(--hair);color:inherit;
+  transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;
+}
+.tpl a:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 22px 44px -28px #000}
+.tpl b{display:block;font-family:var(--data);font-weight:700;font-size:.95rem;color:var(--gold-pale);margin-bottom:.35rem}
+.tpl small{display:block;font-size:.85rem;color:var(--mist);line-height:1.6;margin-bottom:.8rem}
+.tpl em{display:inline-flex;align-items:center;gap:.45rem;font-style:normal;font-family:var(--data);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.tpl svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){ .tpl{grid-template-columns:1fr} }
+.fname{
+  display:inline-block;margin:.2rem 0 .1rem;padding:.55rem 1.05rem;border-radius:10px;
+  background:var(--ink-4);border:1px solid var(--hair);
+  font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  font-size:1.02rem;letter-spacing:.02em;color:var(--gold-pale);
+}
+.fname .id{color:#7BE2A0}
+.checklist{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.55rem}
+.checklist li{
+  display:flex;gap:.75rem;align-items:flex-start;margin:0;
+  padding:.85rem 1.05rem;background:var(--ink-2);border:1px solid var(--hair-2);border-radius:12px;
+  font-size:.9rem;color:var(--mist);
+}
+.checklist li::marker{content:none}
+.checklist svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.2rem}
+.checklist b{color:var(--cream);font-weight:600}
+/* buttons */
+.cta{text-align:center;margin-top:clamp(1.8rem,4vw,2.6rem)}
+.btn{display:inline-block;padding:1rem 2.4rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s}
+.btn-solid{background:var(--band);color:#080808;box-shadow:0 10px 30px -14px rgba(242,98,43,.95)}
+.btn:hover{transform:translateY(-3px)}
+.btn.soon{opacity:.85;cursor:default}
+.btn.soon:hover{transform:none}
+.cta p{margin-top:.9rem;font-size:.85rem;color:var(--faint)}
+
+footer{border-top:1px solid var(--hair-2);padding:2.4rem 0;text-align:center}
+footer p{margin:0 0 .4rem;font-size:.8rem;color:var(--faint)}
+footer a{color:var(--gold);text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition-duration:.01ms!important} }
+@media(max-width:620px){ .nav-in{height:66px} .mark span.mark-t{display:none} }
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME — overrides only. Delete this block to return to dark.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --ink:#FFFFFF;          /* page */
+  --ink-2:#F6F1E6;        /* alternating sections + card base */
+  --ink-3:#FFFFFF;        /* card top of gradient */
+  --ink-4:#ECE4D5;
+
+  --cream:#1B1712;        /* primary text */
+  --mist:rgba(27,23,18,.74);
+  --faint:rgba(27,23,18,.52);
+
+  --gold:#A8730B;
+  --gold-pale:#6E4E0A;    /* headings */
+  --gold-deep:#C2560E;
+  --ember:#C7401A;
+
+  --hair:rgba(168,115,11,.42);
+  --hair-2:rgba(168,115,11,.2);
+}
+body{color:var(--cream);font-weight:400}
+body::after{opacity:.28}
+::selection{background:rgba(168,115,11,.25);color:#1B1712}
+
+/* nav */
+.nav{background:rgba(255,255,255,.82)}
+.nav.stuck{background:rgba(255,255,255,.95);box-shadow:0 8px 30px -22px rgba(27,23,18,.6)}
+.mark{color:var(--gold-pale)}
+.nav-links a{color:rgba(27,23,18,.6)}
+@media(max-width:780px){ .nav-links{background:rgba(255,255,255,.98)} }
+
+/* hero: keep the photographic backdrop, lighten the wash over it */
+.hero-bg{filter:grayscale(.25) brightness(1.02) contrast(.92) blur(2px);animation:none;opacity:.32;transform:none}
+.hero::before{
+  background:
+    radial-gradient(ellipse 62% 44% at 50% 16%,rgba(168,115,11,.14),transparent 70%),
+    linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.35) 30%,var(--ink) 88%);
+}
+.plate{box-shadow:0 0 60px -22px rgba(168,115,11,.55),0 22px 50px -28px rgba(27,23,18,.45)}
+.sub,.venue,.host b{color:var(--cream)}
+.dnum{color:var(--gold-pale);text-shadow:none}
+.count div{background:#fff;border-color:var(--hair)}
+.chain{background:linear-gradient(160deg,#12326d,#0b2350);border-color:rgba(168,115,11,.5)}
+
+/* surfaces that were pure black */
+.card,.msg,.lab,.sub-card,.leader,.adv,.stay-group,.tier,.rail div,.trip .card,
+.connect .card,.aim,.policy-more,.lab-note{
+  box-shadow:0 10px 26px -22px rgba(27,23,18,.5);
+}
+.msg:hover,.trip .card:hover,.lab:hover,.sub-card:hover,.leader:hover,.aim:hover,
+.connect .card:hover,.stay-group:hover{box-shadow:0 22px 44px -28px rgba(27,23,18,.55)}
+.msg::after{color:rgba(168,115,11,.09)}
+.face,.leader img{background:#fff}
+.chief .leader{background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(168,115,11,.12),transparent 70%),#fff}
+.adv .orb{box-shadow:0 0 10px 1px rgba(168,115,11,.45)}
+@keyframes orbPulse{
+  0%,100%{box-shadow:0 0 8px 1px rgba(168,115,11,.45)}
+  50%    {box-shadow:0 0 13px 2px rgba(168,115,11,.7)}
+}
+
+/* tables */
+table{background:#fff}
+thead th{background:#12326d;color:#FFF3D6}
+tbody tr:nth-child(even),tbody tr:nth-child(even) th{background:#FBF7EF}
+tbody th{background:#fff}
+tbody td{color:var(--gold-pale)}
+thead th.now{background:linear-gradient(180deg,rgba(168,115,11,.55),#12326d);color:#fff}
+tbody td.now{background:rgba(168,115,11,.12);color:#1B1712}
+tbody tr:hover,tbody tr:hover th{background:rgba(168,115,11,.08)}
+@media(max-width:720px){ tbody tr,tbody tr:nth-child(even){background:#fff} }
+
+/* feature panels */
+.flagship,.stay-note,.reg-cta,.card.inspiration,.lab-flag{
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 0%,rgba(168,115,11,.13),transparent 70%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.card.inspiration{border:2px solid transparent}
+.flagship::before{background:conic-gradient(from 0deg,transparent,rgba(168,115,11,.08),transparent 38%)}
+.helpdesk{background:radial-gradient(ellipse at 50% 0%,rgba(168,115,11,.12),transparent 70%),#fff;border-color:var(--gold)}
+.helpdesk::before{background:conic-gradient(from 0deg,transparent,rgba(168,115,11,.07),transparent 40%)}
+.warn{background:rgba(199,64,26,.07);border-color:rgba(199,64,26,.35)}
+
+/* media */
+.ph::after{background:linear-gradient(180deg,transparent 45%,rgba(27,23,18,.4))}
+.lab-media::after{background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,transparent 38%,rgba(27,23,18,.6) 100%)}
+.connect .ph::after{background:linear-gradient(180deg,transparent 42%,rgba(27,23,18,.55) 100%)}
+.foot-logos .lp,.host .lp{box-shadow:0 8px 22px -16px rgba(27,23,18,.6)}
+
+/* text bits that assumed a dark ground */
+.theme-sub b,.claim,.who b,.stay-name,.aim p,.lede,.trip p,.msg .body{color:inherit}
+.theme-sub b{color:var(--gold-pale)}
+.claim em{color:var(--gold-pale);text-shadow:none}
+.theme-head,.flag-title,.helpdesk h2,.dnum,.sg-dist,.trip h3,.lab h3,.policy h3,
+.chief .leader b,.definition .term{text-shadow:none}
+.pillar span{text-shadow:none;color:#FFE9A8}
+.pillar img{filter:drop-shadow(0 0 12px rgba(246,184,60,.55))}
+.verbs span{background:#fff;color:var(--gold-pale)}
+.eyebrow.strong{color:var(--gold-pale);text-shadow:none}
+.msg .lead{color:var(--gold-pale)}
+.tier.none b,.tier.none small{color:var(--ember)}
+footer{border-top-color:var(--hair-2)}
+
+
+/* fee-slab chips: the active one was still a dark card */
+.rail div.on{
+  background:linear-gradient(168deg,rgba(168,115,11,.2),rgba(255,255,255,.95));
+  border-color:rgba(168,115,11,.6);
+  box-shadow:0 0 40px -20px rgba(168,115,11,.8);
+}
+.rail div.on b{color:var(--gold-pale)}
+.rail div.on small{color:var(--gold-deep)}
+.now-flag{color:#FFF3D6}
+thead th.now small{color:rgba(255,255,255,.8)}
+.tabs .tab{color:rgba(27,23,18,.65)}
+.stay-note .watch,.shots,.poster-tag{color:#26200F}
+.poster-tag{text-shadow:0 1px 6px rgba(27,23,18,.9)}
+.lab-media .num,.lab:hover .lab-media .num{color:rgba(255,243,214,.85)}
+.aim .n{color:rgba(168,115,11,.6)}
+.lab .num{color:rgba(255,243,214,.75)}
+.km-pill{background:#fff}
+.sg-count{background:#fff}
+.definition{border-left-color:var(--gold)}
+
+
+.credit{color:var(--gold-pale);animation:none;text-shadow:none}
+.credit span{color:var(--gold-deep)}
+
+
+.day{box-shadow:0 10px 26px -22px rgba(27,23,18,.5)}
+.day:hover{box-shadow:0 22px 44px -28px rgba(27,23,18,.55)}
+.day.wk .dnum2{color:var(--gold-pale)}
+.day .dnum2{color:var(--gold-pale)}
+.sched-note{
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 0%,rgba(168,115,11,.13),transparent 70%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.sched-note .watch{color:#26200F}
+
+
+.abs-card,.award,.venue-card{box-shadow:0 10px 26px -22px rgba(27,23,18,.5)}
+.abs-card:hover,.award:hover{box-shadow:0 22px 44px -28px rgba(27,23,18,.55)}
+.sub{background:rgba(255,255,255,.99);box-shadow:0 22px 44px -26px rgba(27,23,18,.5)}
+.sub a{color:rgba(27,23,18,.7)}
+.sub a:hover{background:rgba(168,115,11,.1)}
+@media(max-width:780px){ .sub{background:transparent} }
+.venue-card a.map:hover{color:#26200F}
+
+
+.venue-panel{
+  background:
+    radial-gradient(ellipse 70% 100% at 90% 50%,rgba(168,115,11,.12),transparent 68%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.venue-chips span{background:#fff}
+.venue-body a.map{color:#26200F}
+
+
+.mascot{
+  background:
+    radial-gradient(ellipse 60% 90% at 18% 50%,rgba(30,138,120,.12),transparent 66%),
+    radial-gradient(ellipse 70% 100% at 80% 50%,rgba(168,115,11,.12),transparent 70%),
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#1E8A78,#2FA9C9 22%,#C08A12 52%,#B8710C 74%,#1E8A78) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.mascot .latin{color:#0E6B5C}
+.mascot-facts span{background:#fff}
+
+
+.sub-card.wide{
+  background:
+    radial-gradient(ellipse 60% 120% at 8% 50%,rgba(168,115,11,.14),transparent 66%) padding-box,
+    linear-gradient(168deg,#fff,#FBF6EA) padding-box,
+    linear-gradient(120deg,#E8B94A,#C08A12 30%,#B8710C 60%,#E8B94A) border-box;
+  box-shadow:0 18px 44px -30px rgba(27,23,18,.55);
+}
+.sub-card.wide h4{color:var(--gold-pale)}
+.call{color:#26200F}
+
+
+.seats::after{background:radial-gradient(ellipse at 50% 0%,rgba(18,50,109,.16),transparent 72%);border-top-color:rgba(168,115,11,.45)}
+.seat .disc{background:linear-gradient(150deg,#12326d,#0b2350)}
+.seat b{color:var(--gold-pale)}
+
+/* the seats chips stay navy — they read as the justice chain */
+
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="mark" href="index-light.html"><img src="assets/logo-conference.webp" alt="Forensic Medicon 2027"><span class="mark-t">FORENSIC MEDICON <span>2027</span></span></a>
+    <a class="back" href="index-light.html">&larr; Conference home</a>
+  </div>
+</nav>
+
+<header>
+  <div class="shell">
+    <p class="eyebrow">Scientific programme</p>
+    <h1>Abstract Submission</h1>
+    <p class="sub">Free papers and e-posters for FORENSIC MEDICON 2027 — the 48th Annual Conference of the Indian Academy of Forensic Medicine, 2–6 February 2027.</p>
+  </div>
+</header>
+
+<section>
+  <div class="shell">
+    <div class="notice">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="4.6" width="18.8" height="14.8" rx="2.6"/><path d="m2.6 6.6 9.4 6.4 9.4-6.4"/></svg>
+      <div>
+        <h4>Register first — the link comes by email</h4>
+        <p><b>Abstracts are open.</b> Submission is through a Google Form, and the link is sent to you by email once your registration is complete.</p>
+        <p>The email carries your <b>registration ID</b>, which is a required field on the submission form. Only registered delegates may submit.</p>
+        <p style="margin-top:.9rem"><a class="btn btn-solid" href="index.html#register" style="font-size:.9rem;padding:.8rem 1.8rem">Register for the conference</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <h2>Categories</h2>
+    <p>Every stream accepts both <strong>oral free papers</strong> and <strong>e-posters</strong>, and each has a competitive and a non-competitive track. <strong>The presenting author chooses the format.</strong></p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Stream</th><th>Competitive</th><th>Non-competitive</th><th>Requirement for competitive</th></tr></thead>
+        <tbody>
+          <tr><th>Postgraduate</th><td class="y">Yes</td><td class="y">Yes</td><td>IAFM membership number</td></tr>
+          <tr><th>Faculty / Professionals</th><td class="y">Yes</td><td class="y">Yes</td><td>IAFM membership number</td></tr>
+          <tr><th>Nursing</th><td class="y">Yes</td><td class="y">Yes</td><td>Judged separately under TNAI</td></tr>
+          <tr><th>Undergraduate</th><td class="y">Yes</td><td class="y">Yes</td><td>Judged separately</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Nursing professionals and undergraduate students are not members of the Academy. Their competitive streams are judged separately and carry no IAFM membership requirement.</p>
+  </div>
+</section>
+
+<div class="shell"><div class="rule"></div></div>
+
+<section>
+  <div class="shell">
+    <h2>Eligibility</h2>
+    <ol>
+      <li><strong>You must be a registered delegate before you submit.</strong> Registration is not accepted after submission — the registration ID is a required field on the form.</li>
+      <li><strong>One presentation per presenting author</strong> across the whole conference. You may submit one abstract only, whether oral or poster. There is no limit on co-authorship.</li>
+      <li><strong>Maximum five authors</strong>, including the presenting author. The presenting author is underlined.</li>
+      <li>A valid <strong>IAFM membership number</strong> is required for competitive entry in the Postgraduate and Faculty streams. Entries without one are moved to the non-competitive track.</li>
+      <li>Work must be <strong>original</strong> and must not have been presented at a previous national conference.</li>
+      <li>An <strong>Institutional Ethics Committee approval number</strong> must be stated where human subjects, records or identifiable material are involved.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <h2>Abstract format</h2>
+    <div class="grid">
+      <div class="card">
+        <h4>Length &amp; structure</h4>
+        <ul>
+          <li><strong>250 words</strong>, excluding title, authors and affiliations</li>
+          <li>Structured — <strong>Background · Methods · Results · Conclusion</strong></li>
+          <li>Case reports — <strong>Introduction · Case · Discussion · Conclusion</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Title &amp; authors</h4>
+        <ul>
+          <li>Title <strong>25 words maximum</strong>, no abbreviations</li>
+          <li>Maximum five authors; presenting author underlined</li>
+          <li>Institution and city for each author</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Other requirements</h4>
+        <ul>
+          <li><strong>Three keywords</strong></li>
+          <li>English</li>
+          <li>Times New Roman 12 pt, single spaced</li>
+          <li>Entered directly into the submission form</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shell"><div class="rule"></div></div>
+
+<section>
+  <div class="shell">
+    <h2>Presentation</h2>
+    <p>Both formats are presented from the screen in the allotted hall. There are no printed poster boards.</p>
+    <div class="grid">
+      <div class="card">
+        <h4>Oral free paper</h4>
+        <p style="font-family:var(--data);font-weight:700;font-size:1.05rem;color:var(--gold-pale);margin-bottom:.5rem">6 minutes + 2 minutes discussion</p>
+        <p>Presented as slides. Keep to time — the chair will stop the presentation at six minutes.</p>
+      </div>
+      <div class="card">
+        <h4>E-poster</h4>
+        <p style="font-family:var(--data);font-weight:700;font-size:1.05rem;color:var(--gold-pale);margin-bottom:.5rem">4 minutes + 2 minutes discussion</p>
+        <p>A <strong>single-page PDF</strong> of one large landscape poster. You open it full screen and <strong>zoom into each section</strong> as you speak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <h2>E-poster specification</h2>
+    <p>The e-poster is <strong>one large poster on a single PDF page</strong>. It is shown from the screen: you open it full screen, and zoom into each section in turn as you present. Nothing is printed and there are no boards.</p>
+
+    <div class="poster-spec">
+      <div>
+        <div class="canvas">
+          <div class="t">Title of the poster in 72 pt</div>
+          <div class="a">Authors 40 pt &nbsp;·&nbsp; Institution and city</div>
+          <div class="cols">
+            <div class="col">
+              <div class="h"></div><div class="l"></div><div class="l"></div><div class="l s"></div>
+              <div class="h"></div><div class="l"></div><div class="l"></div><div class="l s"></div>
+            </div>
+            <div class="col">
+              <div class="h"></div><div class="l"></div><div class="l s"></div>
+              <div class="fig"></div>
+            </div>
+            <div class="col">
+              <div class="h"></div><div class="l"></div><div class="l"></div><div class="l s"></div>
+              <div class="h"></div><div class="l"></div><div class="l s"></div>
+            </div>
+          </div>
+          <div class="zoombox" aria-hidden="true"><span>zoom</span></div>
+          <div class="dim">92.7 × 52.1 cm · 16:9 · one page</div>
+        </div>
+        <p style="margin-top:.9rem;font-size:.82rem;color:var(--faint)">Three columns on one page. The dashed frame shows a typical zoom — roughly one third of the width, filling the screen.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Canvas</h3>
+        <p>Build one page at <strong>92.7 × 52.1 cm</strong> (36.5 × 20.5 in) — a 16:9 rectangle, so it fills the screen with no letterboxing. The templates below are already set to this size; if you build your own, set <em>Design → Slide Size → Custom</em> to these dimensions and export as PDF.</p>
+        <h3>Minimum type sizes</h3>
+        <p style="font-size:.85rem">Measured on the 92.7 cm canvas. They look large because the canvas is large — when you zoom to a third of the width, body text reads at about 35 pt on screen, comfortably legible from the back of a hall.</p>
+        <div class="sizes">
+          <div class="size-row"><b>Title</b><span>72 pt</span></div>
+          <div class="size-row"><b>Section headings</b><span>48 pt</span></div>
+          <div class="size-row"><b>Authors &amp; affiliation</b><span>40 pt</span></div>
+          <div class="size-row"><b>Body text</b><span>32 pt</span></div>
+          <div class="size-row"><b>Figure captions</b><span>26 pt</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>What fits</h3>
+    <p>At 32 pt across three columns this canvas holds roughly <strong>650 words plus two figures or tables</strong> — more than a printed A0 poster carries. Write for the space rather than pasting in the full paper.</p>
+    <ul>
+      <li><strong>Three columns</strong>, reading left to right, each a self-contained section</li>
+      <li>Group content so that <strong>one zoom shows one complete section</strong> — this is what makes the poster presentable</li>
+      <li><strong>Light background</strong>, dark text — the halls are lit for presentation</li>
+      <li>Figures at <strong>150 dpi or better</strong> at final size, so they hold up when magnified</li>
+      <li>Single page, <strong>under 20 MB</strong>, fonts embedded — PowerPoint does this automatically on <em>File → Save as → PDF</em></li>
+    </ul>
+
+    <h3>Naming your file</h3>
+    <p>Name the file with <strong>your registration ID and nothing else</strong> — lowercase, no spaces, no surname, no version number.</p>
+    <p class="fname"><span class="id">fm27-pg-042</span>.pdf</p>
+    <p style="font-size:.88rem">The submission form shows you the exact filename to use, generated from your registration ID. Copy it rather than typing it.</p>
+    <p style="font-size:.88rem">This matters on the day. Files named by registration ID sort into running order by themselves, so the desk in your hall opens the next file down the list instead of hunting through two hundred documents called <em>final poster</em>. The same rule applies to oral presentation slides.</p>
+
+    <h3>Templates</h3>
+    <p>Both are PowerPoint files already set to the correct canvas and type sizes. Replace the placeholder text, insert your figure, and export as PDF.</p>
+    <div class="tpl">
+      <a href="assets/FM2027-poster-template-3-column.pptx" download>
+        <b>Three-column template</b>
+        <small>Background · Aims · Methods · Results · Discussion · Conclusion, with a figure panel in the centre. The safest all-round choice.</small>
+        <em><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5"/><path d="M4 17v2.5a1.5 1.5 0 0 0 1.5 1.5h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>Download .pptx</em>
+      </a>
+      <a href="assets/FM2027-poster-template-2-column.pptx" download>
+        <b>Two-column template</b>
+        <small>Text on the left, one large figure panel on the right. Use this if your work turns on a single strong visual.</small>
+        <em><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5"/><path d="M4 17v2.5a1.5 1.5 0 0 0 1.5 1.5h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>Download .pptx</em>
+      </a>
+    </div>
+
+    <h3>Presenting with zoom</h3>
+    <div class="hard" style="border-color:rgba(246,184,60,.45);background:rgba(246,184,60,.06)">
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="stroke:var(--gold)"><circle cx="10.6" cy="10.6" r="7"/><path d="M20.4 20.4 15.6 15.6M10.6 7.8v5.6M7.8 10.6h5.6"/></svg>
+      <p><b>Rehearse the zoom before you travel.</b> You will have four minutes and the venue mouse. Open the PDF in full screen, practise moving between sections, and know your zoom level before you stand up. A presenter who is still hunting for the Results panel at ninety seconds has lost the room — and slide quality carries fifteen marks.</p>
+    </div>
+    <ul style="margin-top:1rem">
+      <li>Open the PDF in <strong>Adobe Acrobat Reader</strong> and press <strong>Ctrl + L</strong> for full screen</li>
+      <li>Zoom with <strong>Ctrl +</strong> and <strong>Ctrl −</strong>; move with the scroll wheel or by dragging</li>
+      <li>Start on the full poster so the audience sees the whole structure, then zoom section by section</li>
+      <li>Return to the full view for your conclusion</li>
+    </ul>
+  </div>
+</section>
+
+<div class="shell"><div class="rule"></div></div>
+
+<section>
+  <div class="shell">
+    <h2>Selection &amp; judging</h2>
+    <p>Abstracts are scored blind by the Scientific Committee. <strong>Nothing is rejected outright</strong> — an entry not shortlisted for the competitive track is automatically offered a place in the non-competitive track.</p>
+
+    <h3>Marking</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Criterion</th><th style="text-align:right">Marks</th></tr></thead>
+        <tbody>
+          <tr><th>Scientific content</th><td style="text-align:right" class="y">30</td></tr>
+          <tr><th>Methodology</th><td style="text-align:right" class="y">25</td></tr>
+          <tr><th>Presentation</th><td style="text-align:right" class="y">20</td></tr>
+          <tr><th>Slide quality</th><td style="text-align:right" class="y">15</td></tr>
+          <tr><th>Response to questions</th><td style="text-align:right" class="y">10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Three judges per panel; the <strong>median</strong> of the three scores is taken.</li>
+      <li>A judge does not assess an entry from their own institution.</li>
+      <li><strong>Tiebreak</strong> — the higher Scientific Content sub-score.</li>
+      <li>Score sheets are retained by the Scientific Committee.</li>
+    </ul>
+    <p>Results of the competitive tracks are announced at valediction. The awards conferred by the Indian Academy of Forensic Medicine at its annual conference are separate, and are administered by the Academy.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <h2>Before you upload</h2>
+    <p>Run through this once. Most problems on the day come from one of these six.</p>
+    <ul class="checklist">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>One page</b>, 92.7 × 52.1 cm, exported as <b>PDF</b> — not PowerPoint</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Body text at 32 pt or larger.</b> Open the PDF, zoom to a third of the width, and read it from across the room</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Figures sharp when magnified.</b> Zoom in on every image — if it blurs, replace it with a higher-resolution version</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Named by registration ID</b>, lowercase, nothing else</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Under 20 MB</b>, fonts embedded, no password or security applied to the PDF</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Rehearsed</b> — full screen, moving section to section, inside four minutes</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="shell"><div class="rule"></div></div>
+
+<section>
+  <div class="shell">
+    <h2>Dates</h2>
+    <div class="dates">
+      <div class="date-row open"><b>OPEN NOW</b><span>Abstract submission is open</span></div>
+      <div class="date-row"><b>15 DEC 2026</b><span>Abstract submission closes</span></div>
+      <div class="date-row"><b>31 DEC 2026</b><span>All acceptances notified</span></div>
+      <div class="date-row"><b>15 JAN 2027</b><span>Final files uploaded — single-page PDF for e-posters, slides for free papers</span></div>
+      <div class="date-row"><b>2–6 FEB 2027</b><span>Conference</span></div>
+    </div>
+
+    <div class="hard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 2.4 17.5A1.9 1.9 0 0 0 4 20.4h16a1.9 1.9 0 0 0 1.6-2.9L13.7 3.9a1.9 1.9 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 17.2v.1"/></svg>
+      <p><b>No abstracts will be accepted after 15 December 2026.</b> Please refrain from making requests.</p>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-solid" data-abstract data-label="Submit an abstract" href="index.html#register">Submission link is sent by email</a>
+      <p>The link is emailed to you with your registration ID once registration is complete.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <p>Queries — <a href="mailto:2027forensicmedicon@gmail.com">2027forensicmedicon@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+919814904440">+91 98149 04440</a></p>
+    <p>FORENSIC MEDICON 2027 · Department of Forensic Medicine &amp; Toxicology, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University, Dehradun</p>
+    <p style="margin-top:1rem"><a href="index-light.html">&larr; Back to the conference site</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* ─────────────────────────────────────────────────────────────
+     ABSTRACT FORM URL — paste the Google Form link between the
+     quotes below. Every "Submit an abstract" button then goes live.
+     Leave it empty and the button explains that the link is emailed.
+     ───────────────────────────────────────────────────────────── */
+  var ABSTRACT_FORM_URL = '';
+
+  [].slice.call(document.querySelectorAll('[data-abstract]')).forEach(function(a){
+    if(ABSTRACT_FORM_URL){
+      a.href = ABSTRACT_FORM_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = a.getAttribute('data-label') || a.textContent;
+      a.classList.remove('soon');
+    } else {
+      a.classList.add('soon');
+    }
+  });
+})();
+</script>
+</body>
+</html>
