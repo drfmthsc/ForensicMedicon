@@ -20,6 +20,7 @@
 <!-- If the site moves to another address, update the two og:image / twitter:image
      URLs and og:url above — WhatsApp and other apps need absolute links. -->
 
+<meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +44,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+html{color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
 body{
   margin:0;background:var(--ink);color:var(--cream);
   font-family:var(--body);font-weight:300;line-height:1.72;
@@ -770,6 +771,16 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
   transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;
 }
 .lab:hover{transform:translateY(-6px);border-color:rgba(246,184,60,.45);box-shadow:0 26px 52px -30px #000}
+/* the wide card runs media beside body, so its image stays the same height as the others */
+.lab.feature{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.lab.feature .lab-media{aspect-ratio:auto;height:100%;border-bottom:0;border-right:1px solid var(--hair-2)}
+.lab.feature .lab-media img{height:100%}
+.lab.feature .lab-body{display:flex;flex-direction:column;justify-content:center;gap:.7rem}
+.lab.feature .lab-flag{margin-top:.2rem}
+@media(max-width:1000px){
+  .lab.feature{grid-column:span 1;grid-template-columns:1fr}
+  .lab.feature .lab-media{aspect-ratio:16/9;height:auto;border-bottom:1px solid var(--hair-2);border-right:0}
+}
 .lab-media{
   position:relative;aspect-ratio:16/9;width:100%;display:grid;place-items:center;
   background:
@@ -777,7 +788,17 @@ a.ph,button.ph{cursor:zoom-in;display:block;padding:0;border:1px solid var(--hai
     linear-gradient(150deg,#0d2450,#071634 72%);
   border:0;border-bottom:1px solid var(--hair-2);padding:0;overflow:hidden;
 }
-button.lab-media{cursor:zoom-in}
+button/* the wide card runs media beside body, so its image stays the same height as the others */
+.lab.feature{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.lab.feature .lab-media{aspect-ratio:auto;height:100%;border-bottom:0;border-right:1px solid var(--hair-2)}
+.lab.feature .lab-media img{height:100%}
+.lab.feature .lab-body{display:flex;flex-direction:column;justify-content:center;gap:.7rem}
+.lab.feature .lab-flag{margin-top:.2rem}
+@media(max-width:1000px){
+  .lab.feature{grid-column:span 1;grid-template-columns:1fr}
+  .lab.feature .lab-media{aspect-ratio:16/9;height:auto;border-bottom:1px solid var(--hair-2);border-right:0}
+}
+.lab-media{cursor:zoom-in}
 .lab-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
 .lab:hover .lab-media img{transform:scale(1.06)}
 .lab-media::after{
@@ -1628,6 +1649,7 @@ footer p{font-size:.77rem;color:var(--faint);margin:0 0 .35rem}
    LIGHT THEME — overrides only. Delete this block to return to dark.
    ═══════════════════════════════════════════════════════════════ */
 :root{
+  color-scheme:light only;
   --ink:#FFFFFF;          /* page */
   --ink-2:#F6F1E6;        /* alternating sections + card base */
   --ink-3:#FFFFFF;        /* card top of gradient */
@@ -2093,10 +2115,9 @@ thead th.now small{color:rgba(255,255,255,.8)}
     <div class="labs rise">
       <div class="lab"><button class="lab-media" data-lb="Forensic AI Lab poster" data-full="assets/poster-ai.webp"><img src="assets/lab-ai.webp" alt="Forensic AI Lab" loading="lazy"><span class="num">01</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Forensic AI Lab</h3><p>Hands-on real-time model building for medico-legal applications</p></div></div>
       <div class="lab"><button class="lab-media" data-lb="MCCD Lab poster" data-full="assets/poster-mccd.webp"><img src="assets/lab-mccd.webp" alt="MCCD Lab" loading="lazy"><span class="num">02</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>MCCD Lab</h3><p>Death documentation and certification masterclass</p></div></div>
-
-      <div class="lab"><button class="lab-media" data-lb="Virtual Autopsy &amp; Forensic Imaging Lab poster" data-full="assets/poster-va.webp"><img src="assets/lab-va.webp" alt="Virtual Autopsy &amp; Forensic Imaging Lab" loading="lazy"><span class="num">03</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Virtual Autopsy &amp; Forensic Imaging Lab</h3><p>Cross-sectional imaging and non-invasive post-mortem examination</p><div class="lab-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg><div><b>Held at AIIMS Rishikesh</b><p>This lab runs off campus at AIIMS Rishikesh. <strong>Transport will be provided</strong> from the conference venue and back.</p></div></div></div></div>
-      <div class="lab"><button class="lab-media" data-lb="Medico-Legal Photography Lab poster" data-full="assets/poster-photo.webp"><img src="assets/lab-photo.webp" alt="Medico-Legal Photography Lab" loading="lazy"><span class="num">04</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Medico-Legal Photography Lab</h3><p>From lens to legal evidence</p></div></div>
-      <div class="lab"><button class="lab-media" data-lb="Simulation Lab poster" data-full="assets/poster-sim.webp"><img src="assets/lab-sim.webp" alt="Simulation Lab" loading="lazy"><span class="num">05</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Simulation Lab</h3><p>Competency through simulation</p></div></div>
+      <div class="lab"><button class="lab-media" data-lb="Medico-Legal Photography Lab poster" data-full="assets/poster-photo.webp"><img src="assets/lab-photo.webp" alt="Medico-Legal Photography Lab" loading="lazy"><span class="num">03</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Medico-Legal Photography Lab</h3><p>From lens to legal evidence</p></div></div>
+      <div class="lab"><button class="lab-media" data-lb="Simulation Lab poster" data-full="assets/poster-sim.webp"><img src="assets/lab-sim.webp" alt="Simulation Lab" loading="lazy"><span class="num">04</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Simulation Lab</h3><p>Competency through simulation</p></div></div>
+      <div class="lab feature"><button class="lab-media" data-lb="Virtual Autopsy &amp; Forensic Imaging Lab poster" data-full="assets/poster-va.webp"><img src="assets/lab-va.webp" alt="Virtual Autopsy &amp; Forensic Imaging Lab" loading="lazy"><span class="num">05</span><span class="poster-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>View lab poster</span></button><div class="lab-body"><h3>Virtual Autopsy &amp; Forensic Imaging Lab</h3><p>Cross-sectional imaging and non-invasive post-mortem examination</p><div class="lab-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11.2a7 7 0 0 0-14 0c0 5.1 7 11.2 7 11.2z"/><circle cx="12" cy="10.1" r="2.6"/></svg><div><b>Held at AIIMS Rishikesh</b><p>This lab runs off campus at AIIMS Rishikesh. <strong>Transport will be provided</strong> from the conference venue and back.</p></div></div></div></div>
     </div>
     <div class="lab-note rise">
       <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Entry to any one workshop</span>

@@ -11,6 +11,7 @@
 <meta property="og:image" content="https://drfmthsc.github.io/ForensicMedicon/assets/og-image.jpg">
 <meta property="og:url" content="https://drfmthsc.github.io/ForensicMedicon/abstracts.html">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +32,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+html{color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--body);font-weight:300;line-height:1.72;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--gold)}
@@ -208,6 +209,7 @@ footer a{color:var(--gold);text-decoration:none}
    LIGHT THEME — overrides only. Delete this block to return to dark.
    ═══════════════════════════════════════════════════════════════ */
 :root{
+  color-scheme:light only;
   --ink:#FFFFFF;          /* page */
   --ink-2:#F6F1E6;        /* alternating sections + card base */
   --ink-3:#FFFFFF;        /* card top of gradient */
